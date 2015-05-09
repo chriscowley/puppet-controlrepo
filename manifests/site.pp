@@ -1,5 +1,5 @@
 node basenode {
 }
 
-node default inherits basenode {
+node default {
 }
