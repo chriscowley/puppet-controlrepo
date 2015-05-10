@@ -19,8 +19,9 @@ node 'puppet' {
 
   }
   # Access Puppetboard from example.com/puppetboard
-  class { 'puppetboard::apache::conf': 
+  class { 'puppetboard::apache::vhost': 
     vhost_name => 'puppetboard.chriscowley.lan',
+    port       => '80',
   }
 
 }
