@@ -20,7 +20,7 @@ node 'puppet' {
   }
   # Access Puppetboard from example.com/puppetboard
   class { 'puppetboard::apache::conf': 
-    vhost_name => 'puppetboard.chriscowley.lan
+    vhost_name => 'puppetboard.chriscowley.lan',
   }
 
 }
