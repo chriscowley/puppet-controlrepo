@@ -13,4 +13,14 @@ node 'puppet' {
     manage_git        => true,
     manage_virtualenv => true,
   }
+  class { 'apache': }
+  class { 'apache::mod::wsgi': 
+    wsgi_socket_prefix => "/var/run/wsgi",
+
+  }
+  # Access Puppetboard from example.com/puppetboard
+  class { 'puppetboard::apache::conf': 
+    vhost_name => 'puppetboard.chriscowley.lan
+  }
+
 }
