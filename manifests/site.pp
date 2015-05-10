@@ -10,7 +10,7 @@ node 'puppet' {
     puppet_service_name => 'puppetserver',
   }
   class { 'puppetboard':
-    manage_git        => 'latest',
-    manage_virtualenv => 'latest',
+    manage_git        => true,
+    manage_virtualenv => true,
   }
 }
