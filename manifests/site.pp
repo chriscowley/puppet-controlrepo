@@ -28,7 +28,7 @@ node 'puppet' {
 
 node 'gitlab' {
   class { 'gitlab':
-    gitlab_branch => '7.10.0',
+    gitlab_branch => '7.10.4',
     external_url  => 'http://gitlab.chriscowley.me.uk'
   }
 }
