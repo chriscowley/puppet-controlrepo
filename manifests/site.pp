@@ -27,9 +27,4 @@ node 'puppet' {
 }
 
 node 'gitlab' {
-  class { 'gitlab':
-    gitlab_branch        => '7.10.4',
-    external_url         => 'http://gitlab.chriscowley.me.uk',
-    gitlab_download_link => 'https://packages.gitlab.com/gitlab/gitlab-ce/packages/el/7/gitlab-ce-7.10.4~omnibus-1.x86_64.rpm'
-  }
 }
