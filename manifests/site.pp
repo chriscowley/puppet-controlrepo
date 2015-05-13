@@ -1,7 +1,7 @@
-node basenode {
+node 'basenode' {
 }
 
-node default {
+node 'default' {
 }
 
 node 'puppet' {
@@ -14,12 +14,12 @@ node 'puppet' {
     manage_virtualenv => true,
   }
   class { 'apache': }
-  class { 'apache::mod::wsgi': 
-    wsgi_socket_prefix => "/var/run/wsgi",
+  class { 'apache::mod::wsgi':
+    wsgi_socket_prefix => '/var/run/wsgi',
 
   }
   # Access Puppetboard from example.com/puppetboard
-  class { 'puppetboard::apache::vhost': 
+  class { 'puppetboard::apache::vhost':
     vhost_name => 'puppetboard.chriscowley.lan',
     port       => '80',
   }
