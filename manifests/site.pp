@@ -23,8 +23,7 @@ node 'puppet' {
     vhost_name => 'puppetboard.chriscowley.lan',
     port       => '80',
   }
-  class {'golang':
-  }
+  include ssl
 }
 
 node 'gitlab' {
