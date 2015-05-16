@@ -10,6 +10,6 @@ mod 'stankevich/python', '1.9.4'
 mod 'puppetlabs/vcsrepo', '1.2.0'
 mod 'nibalizer/puppetboard', '2.5.0'
 mod 'scottyc/golang', '0.2.2'
-mod 'spuder/gitlab',
+mod 'gitlab',
   :git => 'https://github.com/spuder/puppet-gitlab.git'
 
