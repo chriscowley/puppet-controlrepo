@@ -23,7 +23,6 @@ node 'puppet' {
     vhost_name => 'puppetboard.chriscowley.lan',
     port       => '80',
   }
-  include ssl
 }
 
 node 'gitlab' {
