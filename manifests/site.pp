@@ -29,8 +29,8 @@ node 'gitlab' {
 }
 
 node 'logger' {
-  class { 'logstash':
-    java_install => true,
-    manage_repo  => true,
-  }
+  #  class { 'logstash':
+  #  java_install => true,
+  #  manage_repo  => true,
+  #}
 }
