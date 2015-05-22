@@ -12,4 +12,6 @@ mod 'nibalizer/puppetboard', '2.5.0'
 mod 'fnerdwq/ssl'
 mod 'gitlab',
   :git => 'https://github.com/spuder/puppet-gitlab.git'
-
+mod 'logstash',
+    :git => 'https://github.com/elastic/puppet-logstash.git',
+    :ref => '28a3a06093fcdfb29771f1036fc0f101dd2df39a'
