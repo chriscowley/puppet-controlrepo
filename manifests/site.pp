@@ -27,3 +27,10 @@ node 'puppet' {
 
 node 'gitlab' {
 }
+
+node 'logger' {
+  class { 'logstash':
+    java_install => true,
+    manage_repo  => true,
+  }
+}
