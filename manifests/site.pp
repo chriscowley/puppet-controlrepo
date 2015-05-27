@@ -1,7 +1,7 @@
-node basenode {
+node 'basenode' {
 }
 
-node default {
+node 'default' {
 }
 
 node 'puppet' {
@@ -14,22 +14,23 @@ node 'puppet' {
     manage_virtualenv => true,
   }
   class { 'apache': }
-  class { 'apache::mod::wsgi': 
-    wsgi_socket_prefix => "/var/run/wsgi",
+  class { 'apache::mod::wsgi':
+    wsgi_socket_prefix => '/var/run/wsgi',
 
   }
   # Access Puppetboard from example.com/puppetboard
-  class { 'puppetboard::apache::vhost': 
+  class { 'puppetboard::apache::vhost':
     vhost_name => 'puppetboard.chriscowley.lan',
     port       => '80',
-  }
-  class {'golang':
-    base_dir => '/usr/local/go',
-    version  => 'go1.4.1',
-    goroot    =>  "$GOPATH/bin:/usr/local/go/bin:$PATH",
-    workdir   => '/usr/local/',
   }
 }
 
 node 'gitlab' {
+}
+
+node 'logger' {
+  class { 'logstash':
+    java_install => true,
+    manage_repo  => true,
+  }
 }
