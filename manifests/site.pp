@@ -38,7 +38,8 @@ node 'gitlab' {
 }
     
 node 'dns1' {
-  class { 'etchosts': }
+  class { 'etchosts': } ~>
+  class { 'dnsmasq': }
 }
 
 node 'logger' {
