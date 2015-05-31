@@ -21,4 +21,4 @@ mod 'logstash',
     :ref => '28a3a06093fcdfb29771f1036fc0f101dd2df39a'
 mod 'etchosts',
     :git => 'https://github.com/chriscowley/chriscowley-etchosts.git',
-    :ref => 'fb617be1d7c961d9f21a45de8f0262d9da2ed394'
+    :ref => 'd4082548a9f4268866002a5d96d126e987fa5b27'
