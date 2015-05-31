@@ -34,6 +34,7 @@ node 'puppet' {
 }
 
 node 'gitlab' {
+  class {'etchosts::client': }
 }
     
 node 'dns1' {
