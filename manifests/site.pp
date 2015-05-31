@@ -27,6 +27,10 @@ node 'puppet' {
 
 node 'gitlab' {
 }
+    
+node 'dns1' {
+  class { 'etchosts': }
+}
 
 node 'logger' {
   class { 'logstash':

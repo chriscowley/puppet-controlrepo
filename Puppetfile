@@ -18,3 +18,6 @@ mod 'gitlab',
 mod 'logstash',
     :git => 'https://github.com/elastic/puppet-logstash.git',
     :ref => '28a3a06093fcdfb29771f1036fc0f101dd2df39a'
+mod 'etchosts',
+    :git => 'https://github.com/chriscowley/chriscowley-etchosts.git',
+    :ref => '18ee742fedacfc04ea887c92c48a472b0dca4d98'
