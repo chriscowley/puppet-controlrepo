@@ -44,6 +44,7 @@ node 'dns1' {
 }
 
 node 'logger' {
+  class {'etchosts::client': }
   class { 'logstash':
     java_install => true,
     manage_repo  => true,
