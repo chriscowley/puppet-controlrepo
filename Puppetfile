@@ -25,3 +25,6 @@ mod 'etchosts',
 mod 'dnsmasq',
     :git => 'https://github.com/chriscowley/chriscowley-dnsmasq.git',
     :ref => 'c39e01afa0ca03b6aa16054f10cdc62224686770'
+mod 'custom_facts',
+  :git => 'http://gitlab.chriscowley.me.uk/puppet/custom_facts.git',
+  :ref => '7478d2170870db45677f936bf18ac155325b334d'
