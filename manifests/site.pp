@@ -1,7 +1,8 @@
 node default {
   class {'epel': }
-  #  if ${::role} == 'sensu' {
-  #}
+  if $role == 'sensu' {
+    class {'::rabbitmq': }
+  }
 }
 #node 'sensu' {
 #  class { '::rabbitmq':
