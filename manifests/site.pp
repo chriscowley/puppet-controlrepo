@@ -1,13 +1,21 @@
 node default {
-  class {'epel': }
+  class {'etchosts::client': }
+  case $::osfamily {
+    'RedHat': {
+      class {'epel': }
+    }
+  }
   if $role == 'sensu' {
     class {'::rabbitmq': }
   }
+  case $::role {
+    'dns': {
+      class {'etchosts':}
+      class { 'dnsmasq': }
+      Class['etchosts'] ~> Class['dnsmasq']
+    }
+  }
 }
-#node 'sensu' {
-#  class { '::rabbitmq':
-#  }
-#}
 
 node 'puppet' {
   class { 'puppetdb':   }
@@ -42,11 +50,11 @@ node 'gitlab' {
   class {'etchosts::client': }
 }
     
-node 'dns1' {
-  class { 'etchosts': }
-  class { 'dnsmasq': }
-  Class['etchosts'] ~> Class['dnsmasq']
-}
+#node 'dns1' {
+  #class { 'etchosts': }
+  ##class { 'dnsmasq': }
+  #Class['etchosts'] ~> Class['dnsmasq']
+  #}
 
 node 'logger' {
   class {'etchosts::client': }
