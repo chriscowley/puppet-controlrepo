@@ -1,4 +1,4 @@
-node 'default' {
+node default {
   if $::role == 'sensu' {
     class { '::rabbitmq':
       port => '5672',
