@@ -1,6 +1,3 @@
-node default {
-}
-
 node 'sensu' {
   class { '::rabbitmq':
     port => '5672',
