@@ -11,6 +11,7 @@ mod 'puppetlabs/vcsrepo', '1.2.0'
 mod 'nibalizer/puppetboard', '2.5.0'
 mod 'puppetlabs/ntp', '4.0.0'
 mod 'fnerdwq/ssl'
+mod 'puppetlabs/rabbitmq'
 mod 'file_concat',
     :git => 'https://github.com/electrical/puppet-lib-file_concat.git',
     :ref => 'ebc6a32b64bfda92509146d422ab30bd1b0f4610'

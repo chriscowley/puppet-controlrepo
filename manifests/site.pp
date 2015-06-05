@@ -1,7 +1,9 @@
-node 'basenode' {
-}
-
 node 'default' {
+  if $::role == 'sensu' {
+    class { '::rabbitmq':
+      port => '5672',
+    }
+  }
 }
 
 node 'puppet' {
