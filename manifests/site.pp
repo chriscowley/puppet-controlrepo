@@ -1,8 +1,5 @@
 node 'sensu' {
   class { '::rabbitmq':
-    port              => '5672',
-    admin_enable      => true,
-    delete_guest_user => true,
   }
 }
 
