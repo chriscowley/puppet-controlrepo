@@ -1,8 +1,9 @@
 node default {
-  if $::role == 'sensu' {
-    class { '::rabbitmq':
-      port => '5672',
-    }
+}
+
+node 'sensu' {
+  class { '::rabbitmq':
+    port => '5672',
   }
 }
 
