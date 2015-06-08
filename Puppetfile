@@ -25,7 +25,7 @@ mod 'logstash',
     :ref => '28a3a06093fcdfb29771f1036fc0f101dd2df39a'
 mod 'etchosts',
     :git => 'https://github.com/chriscowley/chriscowley-etchosts.git',
-    :ref => '5e205d7e80bbfac60ffc7b06b994a97dd6ef14ef'
+    :ref => 'fa1679971b4b5c0c3f5f466328c15ee5e23156ef'
 mod 'dnsmasq',
     :git => 'https://github.com/chriscowley/chriscowley-dnsmasq.git',
     :ref => 'c39e01afa0ca03b6aa16054f10cdc62224686770'
