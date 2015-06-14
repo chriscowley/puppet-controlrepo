@@ -18,6 +18,7 @@ node default {
       class {'elasticsearch':
         version => '1.5.1',
       }
+      elasticsearch::instance { 'es-01': }
     }
   }
 }
