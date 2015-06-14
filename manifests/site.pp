@@ -16,9 +16,9 @@ node default {
     }
     'logger': {
       class {'elasticsearch':
-        version      => '1.5.1',
-        manage_repo  => true,
-        repo_version => '1.5'
+        #     manage_repo => true,
+        #repo_version     => '1.5',
+        package_url       => 'https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.6.0.noarch.rpm',
       }
       elasticsearch::instance { 'es-01': }
       class { 'logstash':
