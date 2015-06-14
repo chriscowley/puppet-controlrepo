@@ -16,9 +16,15 @@ node default {
     }
     'logger': {
       class {'elasticsearch':
-        version => '1.5.1',
+        version        => '1.5.1',
+        manage_repo    => true,
+
       }
       elasticsearch::instance { 'es-01': }
+      class { 'logstash':
+        java_install => true,
+        manage_repo  => true,
+      }
     }
   }
 }
@@ -62,10 +68,3 @@ node 'gitlab' {
   #Class['etchosts'] ~> Class['dnsmasq']
   #}
 
-node 'logger' {
-  class {'etchosts::client': }
-  class { 'logstash':
-    java_install => true,
-    manage_repo  => true,
-  }
-}
