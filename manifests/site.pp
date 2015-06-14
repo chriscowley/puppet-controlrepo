@@ -16,9 +16,9 @@ node default {
     }
     'logger': {
       class {'elasticsearch':
-        version        => '1.5.1',
-        manage_repo    => true,
-
+        version      => '1.5.1',
+        manage_repo  => true,
+        repo_version => '1.5'
       }
       elasticsearch::instance { 'es-01': }
       class { 'logstash':
