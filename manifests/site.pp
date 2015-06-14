@@ -14,6 +14,11 @@ node default {
       class { 'dnsmasq': }
       Class['etchosts'] ~> Class['dnsmasq']
     }
+    'logger': {
+      class {'elasticsearch':
+        version => '1.5.1',
+      }
+    }
   }
 }
 
