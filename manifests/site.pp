@@ -34,11 +34,6 @@ node default {
     }
     'mirror': {
       class {'::mongodb::server': }
-      case $::osfamily {
-        'RedHat': {
-           class {'::mongodb::client': }
-        }
-      }
     }
   }
 }
