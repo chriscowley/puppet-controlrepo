@@ -32,6 +32,14 @@ node default {
         manage_repo  => true,
       }
     }
+    'mirror': {
+      class {'::mongodb::server': }
+      case $::osfamily {
+        'RedHat': {
+           class {'::mongodb::client': }
+        }
+      }
+    }
   }
 }
 
