@@ -1,7 +1,7 @@
 node default {
-  basepackages = {
-    'wget', 'vim',
-  }
+  #  basepackages = {
+  #   'wget', 'vim',
+  #}
   class {'etchosts::client': }
   case $::osfamily {
     'RedHat': {
