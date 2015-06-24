@@ -34,6 +34,9 @@ node default {
     }
     'mirror': {
       class {'::mongodb::server': }
+      class { '::qpid::server':
+        config_file => '/etc/qpid/qpidd.conf',
+      }
     }
   }
 }

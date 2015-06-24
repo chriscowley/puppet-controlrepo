@@ -17,6 +17,7 @@ mod 'puppetlabs/apt'
 mod 'stahnma/epel'
 mod 'elasticsearch/elasticsearch'
 mod 'puppetlabs/mongodb'
+mod 'dprince/qpid'
 mod 'file_concat',
     :git => 'https://github.com/electrical/puppet-lib-file_concat.git',
     :ref => 'ebc6a32b64bfda92509146d422ab30bd1b0f4610'
