@@ -38,6 +38,9 @@ node default {
         config_file => '/etc/qpid/qpidd.conf',
       }
     }
+    'web-frontend': {
+      class {'apache':}
+    }
   }
 }
 
