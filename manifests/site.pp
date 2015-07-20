@@ -8,6 +8,7 @@ node default {
       class {'epel': }
     }
   }
+  class { 'erlang': }
   class {'rabbitmq':
     port => '5672'
   }
