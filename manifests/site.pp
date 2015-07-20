@@ -10,7 +10,8 @@ node default {
   }
   class { 'erlang': }
   class {'rabbitmq':
-    port => '5672'
+    port             => '5672',
+    package_provider => 'yum',
   }
   class { 'redis': }
   case $::role {
