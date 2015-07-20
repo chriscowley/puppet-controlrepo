@@ -37,4 +37,4 @@ mod 'custom_facts',
   :git => 'http://gitlab.chriscowley.me.uk/puppet/custom_facts.git',
   :ref => '7478d2170870db45677f936bf18ac155325b334d'
 mod 'redis',
-  :git => 'https://github.com/chriscowley/chriscowley-redis.git',
+  :git => 'https://github.com/chriscowley/chriscowley-redis.git'
