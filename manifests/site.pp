@@ -10,13 +10,6 @@ node default {
     }
   }
   class { 'erlang': }
-  class {'rabbitmq':
-    port             => '5672',
-    package_provider => 'yum',
-  }
-  class { 'sensu':
-  }
-  class { 'redis': }
   case $::role {
     'dns': {
       class {'etchosts':}
