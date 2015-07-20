@@ -14,13 +14,6 @@ node default {
     package_provider => 'yum',
   }
   class { 'sensu':
-    install_repo      => true,
-    purge_config      => true,
-    rabbitmq_password => 'password',
-    rabbitmq_port     => '5672',
-    rabbitmq_vhost    => '/sensu',
-    use_embedded_ruby => true,
-    subscriptions     => [ 'base' ]
   }
   class { 'redis': }
   case $::role {
@@ -54,10 +47,6 @@ node default {
       class {'apache':}
     }
     'monitor': {
-      class { 'sensu':
-        server => true,
-        api    => true,
-      }
     }
   }
 }
