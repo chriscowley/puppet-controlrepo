@@ -20,19 +20,19 @@ mod 'elasticsearch/elasticsearch'
 mod 'puppetlabs/mongodb'
 mod 'dprince/qpid'
 mod 'file_concat',
-    :git => 'https://github.com/electrical/puppet-lib-file_concat.git',
-    :ref => 'ebc6a32b64bfda92509146d422ab30bd1b0f4610'
+  :git => 'https://github.com/electrical/puppet-lib-file_concat.git',
+  :ref => 'ebc6a32b64bfda92509146d422ab30bd1b0f4610'
 mod 'gitlab',
   :git => 'https://github.com/spuder/puppet-gitlab.git'
 mod 'logstash',
-    :git => 'https://github.com/elastic/puppet-logstash.git',
-    :ref => '28a3a06093fcdfb29771f1036fc0f101dd2df39a'
+  :git => 'https://github.com/elastic/puppet-logstash.git',
+  :ref => '28a3a06093fcdfb29771f1036fc0f101dd2df39a'
 mod 'etchosts',
-    :git => 'https://github.com/chriscowley/chriscowley-etchosts.git',
-    :ref => 'fa1679971b4b5c0c3f5f466328c15ee5e23156ef'
+  :git => 'https://github.com/chriscowley/chriscowley-etchosts.git',
+  :ref => 'fa1679971b4b5c0c3f5f466328c15ee5e23156ef'
 mod 'dnsmasq',
-    :git => 'https://github.com/chriscowley/chriscowley-dnsmasq.git',
-    :ref => 'c39e01afa0ca03b6aa16054f10cdc62224686770'
+  :git => 'https://github.com/chriscowley/chriscowley-dnsmasq.git',
+  :ref => 'c39e01afa0ca03b6aa16054f10cdc62224686770'
 mod 'custom_facts',
   :git => 'http://gitlab.chriscowley.me.uk/puppet/custom_facts.git',
   :ref => '7478d2170870db45677f936bf18ac155325b334d'
