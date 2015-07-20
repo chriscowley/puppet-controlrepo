@@ -2,6 +2,7 @@ node default {
   #  basepackages = {
   #   'wget', 'vim',
   #}
+  hiera_include('classes')
   class {'etchosts::client': }
   case $::osfamily {
     'RedHat': {
