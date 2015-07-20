@@ -8,6 +8,10 @@ node default {
       class {'epel': }
     }
   }
+  class {'rabbitmq':
+    port => '5672'
+  }
+  class { 'redis': }
   if $role == 'sensu' {
     class {'::rabbitmq': }
   }
@@ -40,6 +44,8 @@ node default {
     }
     'web-frontend': {
       class {'apache':}
+    }
+    'monitor': {
     }
   }
 }

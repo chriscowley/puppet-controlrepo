@@ -13,6 +13,7 @@ mod 'puppetlabs/ntp', '4.0.0'
 mod 'fnerdwq/ssl'
 mod 'puppetlabs/rabbitmq'
 mod 'nanliu/staging'
+mod 'sensu/sensu'
 mod 'puppetlabs/apt'
 mod 'stahnma/epel'
 mod 'elasticsearch/elasticsearch'
@@ -35,3 +36,6 @@ mod 'dnsmasq',
 mod 'custom_facts',
   :git => 'http://gitlab.chriscowley.me.uk/puppet/custom_facts.git',
   :ref => '7478d2170870db45677f936bf18ac155325b334d'
+mod 'redis',
+  :git => 'https://github.com/chriscowley/chriscowley-redis.git',
+  :commit => '208c01aaf2435839ada26d3f7187ca80517fa2a8'
