@@ -12,9 +12,6 @@ node default {
     port => '5672'
   }
   class { 'redis': }
-  if $role == 'sensu' {
-    class {'::rabbitmq': }
-  }
   case $::role {
     'dns': {
       class {'etchosts':}
