@@ -43,6 +43,7 @@ node default {
     'monitor': {
     }
     'ci': {
+      class { 'jenkins':}
     }
   }
 }
