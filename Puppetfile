@@ -20,6 +20,7 @@ mod 'stahnma/epel'
 mod 'elasticsearch/elasticsearch'
 mod 'puppetlabs/mongodb'
 mod 'dprince/qpid'
+mod 'rtyler/jenkins', '1.4.0'
 mod 'file_concat',
   :git => 'https://github.com/electrical/puppet-lib-file_concat.git',
   :ref => 'ebc6a32b64bfda92509146d422ab30bd1b0f4610'
@@ -39,3 +40,6 @@ mod 'custom_facts',
   :ref => '7478d2170870db45677f936bf18ac155325b334d'
 mod 'redis',
   :git => 'https://github.com/chriscowley/chriscowley-redis.git'
+mod 'single_user_rvm',
+  :git => 'https://github.com/chriscowley/puppet-single_user_rvm.git',
+  :ref => 'c6c33d8aef560ffd89f2e27c68e7b9958e36daf5'

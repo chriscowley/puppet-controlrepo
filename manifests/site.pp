@@ -42,6 +42,8 @@ node default {
     }
     'monitor': {
     }
+    'ci': {
+    }
   }
 }
 
