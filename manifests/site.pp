@@ -43,7 +43,9 @@ node default {
     'monitor': {
     }
     'ci': {
-      class { 'jenkins':}
+      class { 'jenkins':
+        configure_firewall => False,
+      }
     }
   }
 }
