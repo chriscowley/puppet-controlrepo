@@ -44,7 +44,7 @@ node default {
     }
     'ci': {
       class { 'jenkins':
-        configure_firewall => 'False',
+        configure_firewall => false,
       }
     }
   }
