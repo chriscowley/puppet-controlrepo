@@ -18,7 +18,7 @@ node default {
     }
     'logger': {
       package { 'wget': 
-      ensure => latest,
+        ensure => latest,
       }
       class {'elasticsearch':
         #     manage_repo => true,
@@ -44,7 +44,7 @@ node default {
     }
     'ci': {
       class { 'jenkins':
-        configure_firewall => False,
+        configure_firewall => 'False',
       }
     }
   }
