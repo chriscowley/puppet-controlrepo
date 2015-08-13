@@ -43,6 +43,9 @@ node default {
     'monitor': {
     }
     'ci': {
+      user { 'jenkins':
+        ensure => 'present'
+      }
       jenkins::plugin { 'rebuild': }
       jenkins::plugin { 'git-client': }
       jenkins::plugin { 'scm-api': }
@@ -52,6 +55,8 @@ node default {
 
       jenkins::plugin { 'ruby-runtime': }
       jenkins::plugin { 'rvm': }
+
+      jenkins::plugin { 'shiningpanda': }
     }
   }
 }
