@@ -50,6 +50,8 @@ node default {
       jenkins::plugin { 'parameterized-trigger': }
       jenkins::plugin { 'git': }
 
+      jenkins::plugin { 'ruby-runtime': }
+      jenkins::plugin { 'rvm': }
     }
   }
 }
