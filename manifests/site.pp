@@ -43,9 +43,13 @@ node default {
     'monitor': {
     }
     'ci': {
-      class { 'jenkins':
-        configure_firewall => false,
-      }
+      jenkins::plugin { 'rebuild': }
+      jenkins::plugin { 'git-client': }
+      jenkins::plugin { 'scm-api': }
+      jenkins::plugin { 'token-macro': }
+      jenkins::plugin { 'parameterized-trigger': }
+      jenkins::plugin { 'git': }
+
     }
   }
 }
