@@ -46,6 +46,7 @@ node default {
       user { 'jenkins':
         ensure => 'present'
       }
+      single_user_rvm::install { 'jenkins': }
       jenkins::plugin { 'rebuild': }
       jenkins::plugin { 'git-client': }
       jenkins::plugin { 'scm-api': }
