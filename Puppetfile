@@ -43,4 +43,4 @@ mod 'redis',
   :git => 'https://github.com/chriscowley/chriscowley-redis.git'
 mod 'single_user_rvm',
   :git => 'https://github.com/chriscowley/puppet-single_user_rvm.git',
-  :ref => 'c6c33d8aef560ffd89f2e27c68e7b9958e36daf5'
+  :ref => 'eaffee41e316e9bf9244acc59adce2deb01c710f'
