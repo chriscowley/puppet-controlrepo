@@ -17,7 +17,7 @@ node default {
       Class['etchosts'] ~> Class['dnsmasq']
     }
     'logger': {
-      package { 'wget': 
+      package { 'wget':
         ensure => latest,
       }
       class {'elasticsearch':
@@ -46,7 +46,9 @@ node default {
       user { 'jenkins':
         ensure => 'present'
       }
-      single_user_rvm::install { 'jenkins': }
+      single_user_rvm::install { 'jenkins':
+        home => '/var/lib/jenkins/',
+      }
       jenkins::plugin { 'rebuild': }
       jenkins::plugin { 'git-client': }
       jenkins::plugin { 'scm-api': }
