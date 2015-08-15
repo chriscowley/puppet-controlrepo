@@ -49,6 +49,9 @@ node default {
       single_user_rvm::install { 'jenkins':
         home => '/var/lib/jenkins/',
       }
+      single_user_rvm::install_ruby { 'ruby-2.1.3':
+        user => 'jenkins',
+      }
       jenkins::plugin { 'rebuild': }
       jenkins::plugin { 'git-client': }
       jenkins::plugin { 'scm-api': }
