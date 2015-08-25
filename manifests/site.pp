@@ -8,6 +8,9 @@ node default {
     'RedHat': {
       class {'epel': }
     }
+    default: {
+
+    }
   }
   class { 'erlang': }
   case $::role {
