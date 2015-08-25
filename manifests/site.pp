@@ -66,6 +66,7 @@ node default {
       jenkins::plugin { 'shiningpanda': }
     }
     'package': {
+      class {'::mongodb::server': }
     }
   }
 }
