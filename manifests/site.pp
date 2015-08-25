@@ -65,6 +65,8 @@ node default {
 
       jenkins::plugin { 'shiningpanda': }
     }
+    'package': {
+    }
   }
 }
 
