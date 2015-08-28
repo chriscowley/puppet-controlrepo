@@ -71,34 +71,7 @@ node default {
     'package': {
       class {'::mongodb::server': }
       class { 'qpid::server':
-        config_file => '/etc/qpid/qpidd.conf'
       }
-      class { '::apache': }
-      class { '::pulp::server':
-        db_name      => 'pulp_database',
-        db_seed_list =>  'localhost:27017',
-      }
-      class { '::pulp::admin':
-        verify_ssl =>  false
-      }
-      class { '::pulp::consumer':
-        verify_ssl =>  false
-      }
-      package { [ 'qpid-cpp-server-store', 'python-qpid', 'python-qpid-qmf' ]:
-        ensure =>  'installed',
-      }
-      anchor { 'profile::pulp::server::start': }
-      anchor { 'profile::pulp::server::end': }
-      Anchor['profile::pulp::server::start'] ->
-      Class['::mongodb::server']->
-      Class['::pulp::repo']->
-      Class['::qpid::server']->
-      Package['qpid-cpp-server-store'] -> Package['python-qpid'] -> Package['python-qpid-qmf'] ->
-      Class['::pulp::server']->
-      Class['::apache::service']->
-      Class['::pulp::admin']->
-      Class['::pulp::consumer']->
-      Anchor['profile::pulp::server::end']
     }
   }
 }
