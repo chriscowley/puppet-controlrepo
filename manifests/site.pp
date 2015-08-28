@@ -70,8 +70,6 @@ node default {
     }
     'package': {
       class {'::mongodb::server': }
-      class { 'qpid::server':
-      }
     }
   }
 }
