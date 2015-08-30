@@ -20,8 +20,9 @@ mod 'puppetlabs/apt'
 mod 'stahnma/epel'
 mod 'elasticsearch/elasticsearch'
 mod 'puppetlabs/mongodb'
-mod 'dprince/qpid'
 mod 'rtyler/jenkins', '1.4.0'
+mod 'pulp',
+	:git => 'https://github.com/chriscowley/chriscowley-pulp.git'
 mod 'file_concat',
   :git => 'https://github.com/electrical/puppet-lib-file_concat.git',
   :ref => 'ebc6a32b64bfda92509146d422ab30bd1b0f4610'
