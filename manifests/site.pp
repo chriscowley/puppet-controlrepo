@@ -4,15 +4,14 @@ node default {
   #}
   hiera_include('classes')
   class {'etchosts::client': }
-  case $::osfamily {
-    'RedHat': {
-      class {'epel': }
-    }
-    default: {
-
-    }
-  }
-  class { 'erlang': }
+  #  case $::osfamily {
+  #  'RedHat': {
+  #    class {'epel': }
+  #  }
+  #   default: {
+  #
+  #  }
+  #}
   case $::role {
     'dns': {
       class {'etchosts':}
