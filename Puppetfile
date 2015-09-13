@@ -9,7 +9,6 @@ mod 'puppetlabs/apache', '1.4.1'
 mod 'stankevich/python', '1.9.4'
 mod 'puppetlabs/vcsrepo', '1.2.0'
 mod 'puppetlabs/java', '1.4.1'
-mod 'nibalizer/puppetboard', '2.5.0'
 mod 'puppetlabs/ntp', '4.0.0'
 mod 'puppetlabs/mysql', '3.6.0'
 mod 'fnerdwq/ssl'
@@ -23,6 +22,8 @@ mod 'dwerder/graphite'
 mod 'elasticsearch/elasticsearch'
 mod 'puppetlabs/mongodb'
 mod 'rtyler/jenkins', '1.4.0'
+mod 'puppetboard',
+	:git => 'https://github.com/nibalizer/puppet-module-puppetboard.git'
 mod 'pulp',
 	:git => 'https://github.com/chriscowley/chriscowley-pulp.git'
 mod 'file_concat',
