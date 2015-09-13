@@ -47,6 +47,10 @@ node default {
         class { 'puppetdb::master::config':
         puppet_service_name => 'puppetserver',
       }
+      class { 'puppetboard':
+        manage_git        => latest,
+        manage_virtualenv => latest,
+      }
     }
     'monitor': {
     }
