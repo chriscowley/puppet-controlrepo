@@ -50,7 +50,16 @@ node default {
       class { 'puppetboard':
         manage_git        => latest,
         manage_virtualenv => latest,
+      } ->
+      class { 'apache': } ->
+      class { 'apache::mod::wsgi':
+        wsgi_socket_prefix => '/var/run/wsgi',
+      } ->
+      class { 'puppetboard::apache::vhost':
+        vhost_name => 'puppetboard.chriscowley.lan',
+        port       => '80',
       }
+
     }
     'monitor': {
     }
