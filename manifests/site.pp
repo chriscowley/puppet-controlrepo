@@ -59,7 +59,6 @@ node default {
         vhost_name => 'puppetboard.chriscowley.lan',
         port       => '80',
       }
-
     }
     'monitor': {
     }
