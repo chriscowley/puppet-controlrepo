@@ -20,6 +20,7 @@ mod 'puppetlabs/apt'
 mod 'stahnma/epel'
 mod 'dwerder/graphite'
 mod 'elasticsearch/elasticsearch'
+mod 'saz/memcached'
 mod 'puppetlabs/mongodb'
 mod 'rtyler/jenkins', '1.4.0'
 mod 'puppetboard',
