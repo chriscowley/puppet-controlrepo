@@ -45,6 +45,9 @@ node default {
     'monitor': {
     }
     'ci': {
+      class { 'diamond':
+        graphite_host => 'stats.chriscowley.lan',
+      }
       user { 'jenkins':
         ensure => 'present'
       }
@@ -74,9 +77,6 @@ node default {
 }
 
 node 'puppet' {
-  class { 'diamond':
-    graphite_host => 'stats.chriscowley.lan',
-  }
   class { 'puppetdb':   }
   class { 'puppetdb::master::config':
     puppet_service_name => 'puppetserver',
