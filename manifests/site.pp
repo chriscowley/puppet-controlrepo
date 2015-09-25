@@ -42,6 +42,24 @@ node default {
     'web-frontend': {
       class {'apache':}
     }
+    'puppet': {
+        class { 'puppetdb':   }
+        class { 'puppetdb::master::config':
+        puppet_service_name => 'puppetserver',
+      }
+      class { 'puppetboard':
+        manage_git        => latest,
+        manage_virtualenv => latest,
+      }
+      class { 'apache': }
+      class { 'apache::mod::wsgi':
+        wsgi_socket_prefix => '/var/run/wsgi',
+      }
+      class { 'puppetboard::apache::vhost':
+        vhost_name => 'puppetboard.chriscowley.lan',
+        port       => '80',
+      }
+    }
     'monitor': {
     }
     'ci': {
@@ -81,20 +99,20 @@ node 'puppet' {
   class { 'puppetdb::master::config':
     puppet_service_name => 'puppetserver',
   }
-  class { 'puppetboard':
-    manage_git        => latest,
-    manage_virtualenv => latest,
-  }
-  class { 'apache': }
-  class { 'apache::mod::wsgi':
-    wsgi_socket_prefix => '/var/run/wsgi',
-
-  }
-  # Access Puppetboard from example.com/puppetboard
-  class { 'puppetboard::apache::vhost':
-    vhost_name => 'puppetboard.chriscowley.lan',
-    port       => '80',
-  }
+#  class { 'puppetboard':
+#    manage_git        => latest,
+#    manage_virtualenv => latest,
+#  }
+#  class { 'apache': }
+#  class { 'apache::mod::wsgi':
+#    wsgi_socket_prefix => '/var/run/wsgi',
+#
+#  }
+#  # Access Puppetboard from example.com/puppetboard
+#  class { 'puppetboard::apache::vhost':
+#    vhost_name => 'puppetboard.chriscowley.lan',
+#    port       => '80',
+#  }
   #class {'::ntp':
     # servers => [
       #'0.centos.pool.ntp.org',
@@ -114,4 +132,3 @@ node 'gitlab' {
   ##class { 'dnsmasq': }
   #Class['etchosts'] ~> Class['dnsmasq']
   #}
-
