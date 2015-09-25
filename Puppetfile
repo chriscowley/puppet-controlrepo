@@ -1,3 +1,5 @@
+forge 'forge.puppetlabs.com'
+
 mod 'puppetlabs/puppetdb', '5.0.0'
 mod 'puppetlabs/stdlib', '4.9.0'
 mod 'puppetlabs/inifile', '1.4.2'
