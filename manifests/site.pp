@@ -74,6 +74,9 @@ node default {
 }
 
 node 'puppet' {
+  class { 'diamond':
+    graphite_host => 'stats.chriscowley.lan',
+  }
   class { 'puppetdb':   }
   class { 'puppetdb::master::config':
     puppet_service_name => 'puppetserver',

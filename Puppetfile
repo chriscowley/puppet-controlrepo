@@ -23,6 +23,7 @@ mod 'dwerder/graphite'
 mod 'elasticsearch/elasticsearch'
 mod 'puppetlabs/mongodb'
 mod 'rtyler/jenkins', '1.4.0'
+mod 'garethr/diamond', '1.0.0'
 mod 'pulp',
 	:git => 'https://github.com/chriscowley/chriscowley-pulp.git'
 mod 'file_concat',
