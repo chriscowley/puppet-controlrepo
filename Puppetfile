@@ -23,7 +23,7 @@ mod 'dwerder/graphite'
 mod 'elasticsearch/elasticsearch'
 mod 'saz/memcached'
 mod 'puppetlabs/mongodb'
-mod 'rtyler/jenkins', '1.4.0'
+mod 'rtyler/jenkins', '1.5.0'
 mod 'garethr/diamond', '1.0.0'
 mod 'ceritsc/yum'
 mod 'puppetboard',
