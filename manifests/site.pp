@@ -63,9 +63,9 @@ node default {
     'monitor': {
     }
     'ci': {
-      class { 'diamond':
-        graphite_host => 'stats.chriscowley.lan',
-      }
+#      class { 'diamond':
+#        graphite_host => 'stats.chriscowley.lan',
+#      }
       user { 'jenkins':
         ensure => 'present'
       }
