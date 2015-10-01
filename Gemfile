@@ -11,6 +11,7 @@ group :test do
   gem "puppetlabs_spec_helper"
   gem "metadata-json-lint"
   gem "r10k"
+  gem "hiera-eyaml"
 end
 
 group :development do
@@ -23,4 +24,5 @@ group :development do
   gem "guard-rake"
   gem "pry"
   gem "yard"
+  gem "hiera-eyaml"
 end
