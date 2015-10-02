@@ -78,19 +78,17 @@ node default {
         user => 'jenkins',
         home => '/var/lib/jenkins/',
       }
-      #jenkins::plugin { 'rebuild': }
-      #jenkins::plugin { 'git-client': }
-      #jenkins::plugin { 'scm-api': }
-      #jenkins::plugin { 'token-macro': }
-      #jenkins::plugin { 'parameterized-trigger': }
-      #jenkins::plugin { 'git': }
-      #jenkins::plugin { 'gitlab-plugin': }
-      #
-      #jenkins::plugin { 'ruby-runtime': }
-      #jenkins::plugin { 'rvm': }
-
-      #      jenkins::plugin { 'shiningpanda': }
-      #jenkins::plugin { 'publish-over-ssh': }
+      jenkins::plugin { 'rebuild': }
+      jenkins::plugin { 'git-client': }
+      jenkins::plugin { 'scm-api': }
+      jenkins::plugin { 'token-macro': }
+      jenkins::plugin { 'parameterized-trigger': }
+      jenkins::plugin { 'git': }
+      jenkins::plugin { 'gitlab-plugin': }
+      jenkins::plugin { 'ruby-runtime': }
+      jenkins::plugin { 'rvm': }
+      jenkins::plugin { 'shiningpanda': }
+      jenkins::plugin { 'publish-over-ssh': }
     }
     'package': {
       class {'::mongodb::server': }
