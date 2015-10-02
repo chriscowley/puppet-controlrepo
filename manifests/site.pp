@@ -90,7 +90,7 @@ node default {
       jenkins::plugin { 'shiningpanda': }
       jenkins::plugin { 'publish-over-ssh': }
 
-      file { '/var/lib/jenkins/.virtalenvs':
+      file { '/var/lib/jenkins/.virtualenvs':
         ensure  => directory,
         owner   => 'jenkins',
         group   => 'jenkins',
