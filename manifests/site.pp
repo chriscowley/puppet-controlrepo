@@ -62,6 +62,9 @@ node default {
     'monitor': {
     }
     'ci': {
+      package { 'git':
+        ensure => 'latest',
+      }
 #      class { 'diamond':
 #        graphite_host => 'stats.chriscowley.lan',
 #      }
