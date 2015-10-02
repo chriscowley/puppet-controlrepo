@@ -90,6 +90,12 @@ node default {
       jenkins::plugin { 'shiningpanda': }
       jenkins::plugin { 'publish-over-ssh': }
 
+      file { '/var/lib/jenkins/.virtalenvs':
+        ensure  => directory,
+        owner   => 'jenkins',
+        group   => 'jenkins',
+        require => User['jenkins'],
+      }
       python::virtualenv {'/var/lib/jenkins/jobs/justanotherlinuxblog/':
         ensure     => present,
         venv_dir   => '/var/lib/jenkins/.virtualenvs/pelcan',
