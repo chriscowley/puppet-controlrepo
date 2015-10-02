@@ -27,6 +27,9 @@ mod 'rtyler/jenkins', '1.5.0'
 mod 'garethr/diamond', '1.0.0'
 mod 'ceritsc/yum'
 mod 'camptocamp/archive', '0.8.1'
+mod 'jenkins',
+	:git => 'https://github.com/jenkinsci/puppet-jenkins.git',
+	:commit => 'e4815b5996f9aaf4f997c6476f7b67c614e2f415'
 mod 'puppetboard',
 	:git => 'https://github.com/nibalizer/puppet-module-puppetboard.git'
 mod 'pulp',
