@@ -89,6 +89,16 @@ node default {
       jenkins::plugin { 'rvm': }
       jenkins::plugin { 'shiningpanda': }
       jenkins::plugin { 'publish-over-ssh': }
+
+      python::virtualenv {'/var/lib/jenkins/jobs/justanotherlinuxblog/':
+        ensure     => present,
+        venv_dir   => '/var/lib/jenkins/.virtualenvs/pelcan',
+        systempkgs => false,
+        distribute => false,
+        owner      => 'jenkins',
+        group      => 'jenkins',
+        cwd        => '/var/lib/jenkins/jobs/justanotherlinuxblog/',
+      }
     }
     'package': {
       class {'::mongodb::server': }
