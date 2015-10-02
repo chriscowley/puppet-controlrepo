@@ -26,6 +26,7 @@ mod 'puppetlabs/mongodb'
 mod 'rtyler/jenkins', '1.5.0'
 mod 'garethr/diamond', '1.0.0'
 mod 'ceritsc/yum'
+mod 'camptocamp/archive', '0.8.1'
 mod 'puppetboard',
 	:git => 'https://github.com/nibalizer/puppet-module-puppetboard.git'
 mod 'pulp',
