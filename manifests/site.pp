@@ -81,12 +81,13 @@ node default {
       jenkins::plugin { 'token-macro': }
       jenkins::plugin { 'parameterized-trigger': }
       jenkins::plugin { 'git': }
-      jenkins::plugin { 'gitlab': }
+      jenkins::plugin { 'gitlab-plugin': }
 
       jenkins::plugin { 'ruby-runtime': }
       jenkins::plugin { 'rvm': }
 
       jenkins::plugin { 'shiningpanda': }
+      jenkins::plugin { 'publish-over-ssh': }
     }
     'package': {
       class {'::mongodb::server': }
