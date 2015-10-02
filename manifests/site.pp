@@ -81,6 +81,7 @@ node default {
       jenkins::plugin { 'token-macro': }
       jenkins::plugin { 'parameterized-trigger': }
       jenkins::plugin { 'git': }
+      jenkins::plugin { 'gitlab': }
 
       jenkins::plugin { 'ruby-runtime': }
       jenkins::plugin { 'rvm': }
