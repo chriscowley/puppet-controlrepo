@@ -65,6 +65,9 @@ node default {
       package { 'git':
         ensure => 'latest',
       }
+      package { 'python-virtualenv':
+        ensure => latest,
+      }
 #      class { 'diamond':
 #        graphite_host => 'stats.chriscowley.lan',
 #      }
