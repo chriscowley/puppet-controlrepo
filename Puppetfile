@@ -25,6 +25,7 @@ mod 'saz/memcached'
 mod 'puppetlabs/mongodb'
 mod 'rtyler/jenkins', '1.5.0'
 mod 'garethr/diamond', '1.0.0'
+mod 'puppet/collectd', '4.2.0'
 mod 'ceritsc/yum'
 mod 'camptocamp/archive', '0.8.1'
 mod 'jenkins',
