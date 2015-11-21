@@ -39,7 +39,7 @@ node default {
       }
     }
     'metrics': {
-      apache::vhost { graphite.chriscowley.lan:
+      apache::vhost { 'graphite.chriscowley.lan':
         port                                => '80',
         docroot                           => '/opt/graphite/webapp',
         wsgi_application_group          => '%{GLOBAL}',
