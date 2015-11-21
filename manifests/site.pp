@@ -39,6 +39,16 @@ node default {
       }
     }
     'metrics': {
+      collectd::plugin::write_graphite::carbon { 'stats':
+        graphitehost    => 'stats.chriscowley.lan',
+        graphiteport    => '2003',
+        protocol        => 'tcp',
+        graphiteprefix  => 'servers.',
+        logsenderrors   => true,
+        storerates      => true,
+        alwaysappendds  => false,
+        escapecharacter => '_',
+      }
       apache::vhost { 'graphite.chriscowley.lan':
         port                                => '80',
         docroot                           => '/opt/graphite/webapp',
