@@ -64,11 +64,6 @@ node default {
           'set Access-Control-Allow-Methods "GET, OPTIONS, POST"',
           'set Access-Control-Allow-Headers "origin, authorization, accept"',
         ],
-        directories => [{
-          path    => '/media/',
-          order   => 'deny,allow',
-          allow   =>  'from all'}
-        ]
       }
     }
     'web-frontend': {
