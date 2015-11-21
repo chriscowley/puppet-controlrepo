@@ -65,7 +65,6 @@ node default {
           'set Access-Control-Allow-Headers "origin, authorization, accept"',
         ],
       }
-      elasticsearch::instance { 'es-01':}
     }
     'web-frontend': {
       class {'apache':}
