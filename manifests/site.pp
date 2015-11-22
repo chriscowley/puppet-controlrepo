@@ -10,7 +10,7 @@ node default {
     graphiteprefix  => 'servers.',
     logsenderrors   => true,
     storerates      => true,
-    alwaysappendds  => false,
+    alwaysappendds  => true,
     escapecharacter => '_',
   }
   class {'etchosts::client': }
