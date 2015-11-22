@@ -100,7 +100,6 @@ node default {
     'monitor': {
     }
     'gitlab': {
-      class {'etchosts::client': }
 
     }
     'ci': {
