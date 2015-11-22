@@ -3,7 +3,7 @@ node default {
   #  basepackages = {
   #   'wget', 'vim',
   #}
-  collectd::plugin::write_graphite::carbon { 'stats':
+  collectd::plugin::write_graphite::carbon { $::fqdn:
     graphitehost    => 'stats.chriscowley.lan',
     graphiteport    => '2003',
     protocol        => 'tcp',
