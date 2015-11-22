@@ -99,6 +99,10 @@ node default {
     }
     'monitor': {
     }
+    'gitlab': {
+      class {'etchosts::client': }
+
+    }
     'ci': {
       package { 'git':
         ensure => 'latest',
@@ -150,31 +154,6 @@ node default {
   }
 }
 
-node 'puppet' {
-  class { 'puppetdb':   }
-  class { 'puppetdb::master::config':
-    puppet_service_name => 'puppetserver',
-  }
-#  class { 'puppetboard':
-#    manage_git        => latest,
-#    manage_virtualenv => latest,
-#  }
-#  class { 'apache': }
-#  class { 'apache::mod::wsgi':
-#    wsgi_socket_prefix => '/var/run/wsgi',
-#
-#  }
-#  # Access Puppetboard from example.com/puppetboard
-#  class { 'puppetboard::apache::vhost':
-#    vhost_name => 'puppetboard.chriscowley.lan',
-#    port       => '80',
-#  }
-}
-
-node 'gitlab' {
-  class {'etchosts::client': }
-}
-    
 #node 'dns1' {
   #class { 'etchosts': }
   ##class { 'dnsmasq': }
