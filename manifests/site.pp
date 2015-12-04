@@ -26,8 +26,7 @@ node default {
       class {'etchosts':}
       class { 'dnsmasq': }
       Class['etchosts'] ~> Class['dnsmasq']
-      class {'openvpn':}
-      openvpn::server { 'dns1':
+      openvpn::server { 'home.chriscowley.me.uk':
         country      => 'FR',
         province     => 'Bretagne',
         city         => 'Rennes',
