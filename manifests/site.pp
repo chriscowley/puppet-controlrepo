@@ -35,6 +35,9 @@ node default {
         email        => 'chris@chriscowley.me.uk',
         server       => '10.200.200.0 255.255.255.0'
       }
+      openvpn::client {'motog':
+        server => 'home.chriscowley.me.uk'
+      }
     }
     'logger': {
       package { 'wget':
