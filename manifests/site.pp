@@ -26,6 +26,7 @@ node default {
       class {'etchosts':}
       class { 'dnsmasq': }
       Class['etchosts'] ~> Class['dnsmasq']
+      sysctl { 'net.ipv4.ip_forward': value =>  '1' }
       openvpn::server { 'home.chriscowley.me.uk':
         country      => 'FR',
         province     => 'Bretagne',
