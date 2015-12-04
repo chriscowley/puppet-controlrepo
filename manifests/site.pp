@@ -33,7 +33,8 @@ node default {
         city         => 'Rennes',
         organization => 'chriscowley.me.uk',
         email        => 'chris@chriscowley.me.uk',
-        server       => '10.200.200.0 255.255.255.0'
+        server       => '10.200.200.0 255.255.255.0',
+        proto        => 'udp',
       }
       openvpn::client {'motog':
         server => 'home.chriscowley.me.uk'
