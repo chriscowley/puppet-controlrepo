@@ -26,6 +26,15 @@ node default {
       class {'etchosts':}
       class { 'dnsmasq': }
       Class['etchosts'] ~> Class['dnsmasq']
+      class {'openvpn':}
+      openvpn::server { 'dns1':
+        country      => 'FR',
+        province     => 'Bretagne',
+        city         => 'Rennes',
+        organization => 'chriscowley.me.uk',
+        email        => 'chris@chriscowley.me.uk',
+        server       => '10.200.200.0 255.255.255.0'
+      }
     }
     'logger': {
       package { 'wget':
