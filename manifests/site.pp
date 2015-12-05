@@ -27,18 +27,18 @@ node default {
       class { 'dnsmasq': }
       Class['etchosts'] ~> Class['dnsmasq']
       sysctl { 'net.ipv4.ip_forward': value =>  '1' }
-      openvpn::server { 'home.chriscowley.me.uk':
-        country      => 'FR',
-        province     => 'Bretagne',
-        city         => 'Rennes',
-        organization => 'chriscowley.me.uk',
-        email        => 'chris@chriscowley.me.uk',
-        server       => '10.200.200.0 255.255.255.0',
-        proto        => 'udp',
-      }
-      openvpn::client {'motog':
-        server => 'home.chriscowley.me.uk'
-      }
+      #      openvpn::server { 'home.chriscowley.me.uk':
+      #  country      => 'FR',
+      #  province     => 'Bretagne',
+      #  city         => 'Rennes',
+      #  organization => 'chriscowley.me.uk',
+      #  email        => 'chris@chriscowley.me.uk',
+      #  server       => '10.200.200.0 255.255.255.0',
+      #  proto        => 'udp',
+      #}
+      #openvpn::client {'motog':
+      #  server => 'home.chriscowley.me.uk'
+      #}
     }
     'logger': {
       package { 'wget':
