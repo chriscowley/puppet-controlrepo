@@ -93,7 +93,7 @@ node default {
           'dash.chriscowley.lan',
           'grafana.chriscowley.lan',
         ]
-        port       => 443,
+        port       =>'443',
         ssl        => true,
         proxy_pass => [
           { 'path' => '/', 'url' =>  'http://localhost:3000'}
