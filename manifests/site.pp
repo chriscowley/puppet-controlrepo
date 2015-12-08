@@ -126,7 +126,7 @@ node default {
       }
       file { '/opt/sensu-plugins':
         ensure  => directory
-        Require => Package['wget']
+        require => Package['wget']
       }
       staging::deploy { 'sensu-community-plugins.tar.gz':
         source  => 'https://github.com/sensu/sensu-community-plugins/archive/master.tar.gz',
