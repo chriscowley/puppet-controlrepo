@@ -111,6 +111,28 @@ node default {
       }
     }
     'monitor': {
+      rabbitmq_user  {'sensu':
+        admin    => false,
+        password => 'password',
+      }
+      rabbitmq_vhost { '/sensu':
+        ensure => present,
+      }
+      package {'wget':
+        ensure => installed,
+      }
+      package { 'bind-utils':
+        ensure => installed,
+      }
+      file { '/opt/sensu-plugins':
+        ensure  => directory
+        Require => Package['wget']
+      }
+      staging::deploy { 'sensu-community-plugins.tar.gz':
+        source  => 'https://github.com/sensu/sensu-community-plugins/archive/master.tar.gz',
+        target  => '/opt/sensu-plugins',
+        require => File['/opt/sensu-plugins'],
+      }
     }
     'gitlab': {
 
