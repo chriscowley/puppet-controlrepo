@@ -133,6 +133,12 @@ node default {
         target  => '/opt/sensu-plugins',
         require => File['/opt/sensu-plugins'],
       }
+      sensu::check { 'check_cron':
+        command     => '/opt/sensu-plugins/sensu-community-plugins-master/plugins/processes/check-procs.rb -p crond -C   1',
+        handlers    => 'default',
+        subscribers => 'base',
+        require     =>  Staging::Deploy['sensu-community-plugins.tar.gz'],
+      }
     }
     'gitlab': {
 
