@@ -1,9 +1,6 @@
 node default {
   hiera_include('classes')
-  basepackages = {
-    'nagios-plugins-all', 'vim'
-  }
-  package { $basepackages:
+  package { 'nagios-plugins-all'
     ensure => latest,
   }
   collectd::plugin::write_graphite::carbon { $::fqdn:
