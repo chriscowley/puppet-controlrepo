@@ -33,6 +33,7 @@ mod 'garethr/diamond', '1.0.0'
 mod 'puppet/collectd', '4.2.0'
 mod 'ceritsc/yum'
 mod 'camptocamp/archive', '0.8.1'
+mod 'saz/timezone'
 mod 'jenkins',
 	:git => 'https://github.com/jenkinsci/puppet-jenkins.git',
 	:commit => 'e4815b5996f9aaf4f997c6476f7b67c614e2f415'
