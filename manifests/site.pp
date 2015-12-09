@@ -3,6 +3,11 @@ node default {
   package { 'nagios-plugins-all':
     ensure => latest,
   }
+  staging::deploy { 'sensu-community-plugins.tar.gz':
+    source  => 'https://github.com/sensu/sensu-community-plugins/archive/master.tar.gz',
+    target  => '/opt/sensu-plugins',
+    require => File['/opt/sensu-plugins'],
+  }
   collectd::plugin::write_graphite::carbon { $::fqdn:
     graphitehost    => 'stats.chriscowley.lan',
     graphiteport    => '2003',
@@ -14,7 +19,7 @@ node default {
     escapecharacter => '_',
   }
   class {'etchosts::client': }
-    case $::osfamily {
+  case $::osfamily {
     'RedHat': {
       class {'epel': }
     }
@@ -127,11 +132,6 @@ node default {
       file { '/opt/sensu-plugins':
         ensure  => directory,
         require => Package['wget'],
-      }
-      staging::deploy { 'sensu-community-plugins.tar.gz':
-        source  => 'https://github.com/sensu/sensu-community-plugins/archive/master.tar.gz',
-        target  => '/opt/sensu-plugins',
-        require => File['/opt/sensu-plugins'],
       }
       sensu::check { 'check_cron':
         command     => '/opt/sensu-plugins/sensu-community-plugins-master/plugins/processes/check-procs.rb -p crond -C   1',
