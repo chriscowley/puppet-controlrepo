@@ -3,10 +3,26 @@ node default {
   package { 'nagios-plugins-all':
     ensure => latest,
   }
+  package {'wget':
+    ensure => installed,
+  }
+  package { 'bind-utils':
+    ensure => installed,
+  }
+  file { '/opt/sensu-plugins':
+    ensure  => directory,
+    require => Package['wget'],
+  }
   staging::deploy { 'sensu-community-plugins.tar.gz':
     source  => 'https://github.com/sensu/sensu-community-plugins/archive/master.tar.gz',
     target  => '/opt/sensu-plugins',
     require => File['/opt/sensu-plugins'],
+  }
+  sensu::check { 'check_puppet':
+    command     => '/opt/sensu-plugins/sensu-community-plugins-master/plugins/processes/check-procs.rb -p puppet -C   1',
+    handlers    => 'default',
+    subscribers => 'base',
+    require     =>  Staging::Deploy['sensu-community-plugins.tar.gz'],
   }
   collectd::plugin::write_graphite::carbon { $::fqdn:
     graphitehost    => 'stats.chriscowley.lan',
@@ -122,16 +138,6 @@ node default {
       }
       rabbitmq_vhost { '/sensu':
         ensure => present,
-      }
-      package {'wget':
-        ensure => installed,
-      }
-      package { 'bind-utils':
-        ensure => installed,
-      }
-      file { '/opt/sensu-plugins':
-        ensure  => directory,
-        require => Package['wget'],
       }
       sensu::check { 'check_cron':
         command     => '/opt/sensu-plugins/sensu-community-plugins-master/plugins/processes/check-procs.rb -p crond -C   1',
