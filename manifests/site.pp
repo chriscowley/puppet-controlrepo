@@ -1,6 +1,6 @@
 node default {
   hiera_include('classes')
-  package { 'nagios-plugins-all'
+  package { 'nagios-plugins-all':
     ensure => latest,
   }
   collectd::plugin::write_graphite::carbon { $::fqdn:
