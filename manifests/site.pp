@@ -1,8 +1,11 @@
 node default {
   hiera_include('classes')
-  #  basepackages = {
-  #   'wget', 'vim',
-  #}
+  basepackages = {
+    'nagios-plugins-all', 'vim'
+  }
+  package { $basepackages:
+    ensure => latest,
+  }
   collectd::plugin::write_graphite::carbon { $::fqdn:
     graphitehost    => 'stats.chriscowley.lan',
     graphiteport    => '2003',
