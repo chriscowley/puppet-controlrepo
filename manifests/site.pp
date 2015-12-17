@@ -103,11 +103,24 @@ node default {
           'set Access-Control-Allow-Headers "origin, authorization, accept"',
         ],
       }
-      class {'diamond':
-        graphite_host    => 'graphite.chriscowley.lan',
-        graphite_port    => 2003,
-        interval         => 10,
-        install_from_pip => true,
+      class {'collectd::plugin::snmp':
+        data           => {
+          std_traffic  => {
+            'Type'     => 'if_octets',
+            'Table'    => true,
+            'Instance' => 'IF-MIB::ifDescr',
+            'Values'   => 'IF-MIB::ifInOctets" "IF-MIB::ifOutOctets',
+          }
+        },
+        hosts           => {
+          swlab01       => {
+            'Address'   => 'swlab01.chriscowley.lan',
+            'Version'   => 2,
+            'Community' => 'public',
+            'Collect'   => ['std_traffic'],
+            'Interval'  => 10,
+          }
+        },
       }
     }
     'web-frontend': {
