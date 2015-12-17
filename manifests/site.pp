@@ -103,6 +103,12 @@ node default {
           'set Access-Control-Allow-Headers "origin, authorization, accept"',
         ],
       }
+      class {'diamond':
+        graphite_host    => 'graphite.chriscowley.lan',
+        graphite_port    => 2003,
+        interval         => 10,
+        install_from_pip => true,
+      }
     }
     'web-frontend': {
       class {'apache':}
