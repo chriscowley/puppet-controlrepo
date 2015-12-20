@@ -28,6 +28,12 @@ node default {
     alwaysappendds  => true,
     escapecharacter => '_',
   }
+  sensu::check { 'check_disk':
+    command     => '/opt/sensu-plugins/sensu-community-plugins-master/plugins/processes/check-disk.rb',
+    handlers    => 'default',
+    subscribers => 'base',
+    require     =>  Staging::Deploy['sensu-community-plugins.tar.gz'],
+  }
   class {'etchosts::client': }
   case $::osfamily {
     'RedHat': {
@@ -172,9 +178,6 @@ node default {
       package { 'git':
         ensure => 'latest',
       }
-#      class { 'diamond':
-#        graphite_host => 'stats.chriscowley.lan',
-#      }
       user { 'jenkins':
         ensure => 'present'
       }
