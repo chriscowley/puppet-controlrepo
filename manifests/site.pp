@@ -42,6 +42,11 @@ node default {
     default: {
     }
   }
+  class { 'selinux':
+    ensure => 'permissive',
+    type   => 'targeted',
+  }
+  selinux::boolean { 'collectd_tcp_network_connect': }
   case $::role {
     'dns': {
       class {'etchosts':}
