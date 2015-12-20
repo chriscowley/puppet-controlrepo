@@ -39,7 +39,7 @@ node default {
     'RedHat': {
       class {'epel': }
     }
-     default: {
+    default: {
     }
   }
   case $::role {
@@ -84,42 +84,42 @@ node default {
     }
     'metrics': {
       apache::vhost { 'graphite.chriscowley.lan':
-        port                                => '80',
-        docroot                           => '/opt/graphite/webapp',
-        wsgi_application_group          => '%{GLOBAL}',
-        wsgi_daemon_process           => 'graphite',
+        port                        => '80',
+        docroot                     => '/opt/graphite/webapp',
+        wsgi_application_group      => '%{GLOBAL}',
+        wsgi_daemon_process         => 'graphite',
         wsgi_daemon_process_options => {
-          processes               => '5',
-          threads                 => '5',
-          display-name            => '%{GROUP}',
-          inactivity-timeout      =>  '120',
+          processes          => '5',
+          threads            => '5',
+          display-name       => '%{GROUP}',
+          inactivity-timeout =>  '120',
         },
-        wsgi_import_script           => '/opt/graphite/conf/graphite.wsgi',
-        wsgi_import_script_options => {
-          process-group          => 'graphite',
-          application-group      =>  '%{GLOBAL}'
+        wsgi_import_script          => '/opt/graphite/conf/graphite.wsgi',
+        wsgi_import_script_options  => {
+          process-group     => 'graphite',
+          application-group =>  '%{GLOBAL}'
         },
-        wsgi_process_group    => 'graphite',
-        wsgi_script_aliases => {
-          '/'             =>  '/opt/graphite/conf/graphite.wsgi'
+        wsgi_process_group          => 'graphite',
+        wsgi_script_aliases         => {
+          '/' =>  '/opt/graphite/conf/graphite.wsgi'
         },
-        headers => [
+        headers                     => [
           'set Access-Control-Allow-Origin "*"',
           'set Access-Control-Allow-Methods "GET, OPTIONS, POST"',
           'set Access-Control-Allow-Headers "origin, authorization, accept"',
         ],
       }
       class {'collectd::plugin::snmp':
-        data           => {
-          std_traffic  => {
+        data  => {
+          std_traffic => {
             'Type'     => 'if_octets',
             'Table'    => true,
             'Instance' => 'IF-MIB::ifDescr',
             'Values'   => 'IF-MIB::ifInOctets" "IF-MIB::ifOutOctets',
           }
         },
-        hosts           => {
-          swlab01       => {
+        hosts => {
+          swlab01 => {
             'Address'   => 'swlab01.chriscowley.lan',
             'Version'   => 2,
             'Community' => 'public',
@@ -218,6 +218,8 @@ node default {
     }
     'package': {
       class {'::mongodb::server': }
+    }
+    default: {
     }
   }
 }
