@@ -224,6 +224,14 @@ node default {
     'package': {
       class {'::mongodb::server': }
     }
+    'toolbox': {
+      mysql::db {'gogs':
+        user     => 'gogs',
+        password => 'correcthorsebatterystaple',
+        host     => '%',
+        grant    => ['ALL'],
+      }
+    }
     default: {
     }
   }
