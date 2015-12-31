@@ -1,0 +1,5 @@
+build:
+  image: ruby:2.1.3
+  commands:
+    - bundle install
+    - rake syntax
