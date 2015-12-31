@@ -34,6 +34,7 @@ mod 'jfryman/selinux', '0.3.0'
 mod 'ceritsc/yum'
 mod 'camptocamp/archive', '0.8.1'
 mod 'saz/timezone'
+mod 'garethr/docker', '5.0.0'
 mod 'diamond',
 	:git => 'https://github.com/chriscowley/garethr-diamond.git'
 mod 'jenkins',
