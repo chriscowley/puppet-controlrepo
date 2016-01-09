@@ -29,7 +29,7 @@ node default {
     escapecharacter => '_',
   }
   sensu::check { 'check_disk':
-    command     => '/opt/sensu-plugins/sensu-community-plugins-master/plugins/processes/check-disk.rb',
+    command     => '/opt/sensu-plugins/sensu-community-plugins-master/plugins/system/check-disk.rb',
     handlers    => 'default',
     subscribers => 'base',
     require     =>  Staging::Deploy['sensu-community-plugins.tar.gz'],
