@@ -1,5 +1,10 @@
 node default {
   hiera_include('classes')
+  class { 'packagecloud::repo': }
+  packagecloud::repo { 'chriscowleyunix/monitoring':
+    type =>  'rpm',
+  }
+
   package { 'nagios-plugins-all':
     ensure => latest,
   }
