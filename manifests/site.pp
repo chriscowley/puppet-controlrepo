@@ -1,6 +1,6 @@
 node default {
   hiera_include('classes')
-  class { 'packagecloud::repo': }
+  class { 'packagecloud': }
   packagecloud::repo { 'chriscowleyunix/monitoring':
     type =>  'rpm',
   }
