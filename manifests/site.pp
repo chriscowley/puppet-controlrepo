@@ -236,6 +236,7 @@ node default {
         host     => '%',
         grant    => ['ALL'],
       }
+      hiera_resources('toolbox-dbs')
     }
     default: {
     }
