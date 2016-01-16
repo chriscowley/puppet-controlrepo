@@ -92,6 +92,10 @@ node default {
         config_file => '/etc/qpid/qpidd.conf',
       }
     }
+    'data': {
+      $mysqldbs = hiera('mysql:db',{})
+      create_resources('mysql:db', $mysqldbs)
+    }
     'metrics': {
       apache::vhost { 'graphite.chriscowley.lan':
         port                        => '80',
