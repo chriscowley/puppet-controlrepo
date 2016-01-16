@@ -93,12 +93,14 @@ node default {
       }
     }
     'data': {
-      mysql::db { 'owncloud':
-        user     => 'owncloud',
-        password => hiera('mysql::db::owncloud::password'),
-        host     => '%',
-        grant    => ['ALL']
-      }
+      $mysqldbs = hiera('mysqldb', {})
+      create_resources('mysql::db', $mysqldbs)
+      #      mysql::db { 'owncloud':
+      #  user     => 'owncloud',
+      #  password => hiera('mysql::db::owncloud::password'),
+      #  host     => '%',
+      #  grant    => ['ALL']
+      #}
     }
     'metrics': {
       apache::vhost { 'graphite.chriscowley.lan':
