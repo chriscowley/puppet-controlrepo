@@ -93,8 +93,8 @@ node default {
       }
     }
     'data': {
-      $mysqldbs = hiera('mysql:db',{})
-      create_resources('mysql:db', $mysqldbs)
+      #      $mysqldbs = hiera('mysql:db',{})
+      #create_resources('mysql:db', $mysqldbs)
     }
     'metrics': {
       apache::vhost { 'graphite.chriscowley.lan':
