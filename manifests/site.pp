@@ -73,6 +73,7 @@ node default {
       #}
     }
     'logger': {
+      elasticsearch::instance { 'es-01': }
     }
     'mirror': {
       class {'::mongodb::server': }
