@@ -52,7 +52,6 @@ mod 'gitlab',
   :git => 'https://github.com/spuder/puppet-gitlab.git'
 mod 'logstash',
   :git => 'https://gogs.chriscowley.me.uk/puppet/chriscowley-logstash.git'
-  :ref => '28a3a06093fcdfb29771f1036fc0f101dd2df39a'
 mod 'etchosts',
   :git => 'https://github.com/chriscowley/chriscowley-etchosts.git',
   :ref => 'fa1679971b4b5c0c3f5f466328c15ee5e23156ef'
