@@ -23,7 +23,7 @@ mod 'puppetlabs/apt'
 mod 'stahnma/epel'
 mod 'dwerder/graphite'
 mod 'computology/packagecloud', '0.2.11'
-mod 'elasticsearch/elasticsearch', '0.9.9'
+mod 'elasticsearch/elasticsearch', '0.10.2'
 mod 'luxflux/openvpn', '3.0.0'
 mod 'thias/sysctl', '1.0.2'
 mod 'bfraser/grafana', '2.5.0'
@@ -51,7 +51,7 @@ mod 'file_concat',
 mod 'gitlab',
   :git => 'https://github.com/spuder/puppet-gitlab.git'
 mod 'logstash',
-  :git => 'https://github.com/elastic/puppet-logstash.git',
+  :git => 'https://gogs.chriscowley.me.uk/puppet/chriscowley-logstash.git'
   :ref => '28a3a06093fcdfb29771f1036fc0f101dd2df39a'
 mod 'etchosts',
   :git => 'https://github.com/chriscowley/chriscowley-etchosts.git',
