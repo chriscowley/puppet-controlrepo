@@ -72,9 +72,6 @@ node default {
       #}
     }
     'logger': {
-      package { 'wget':
-        ensure => latest,
-      }
     }
     'mirror': {
       class {'::mongodb::server': }
