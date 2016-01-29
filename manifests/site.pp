@@ -6,7 +6,8 @@ node default {
   }
 
   package { 'nagios-plugins-all':
-    ensure => latest,
+    ensure  => latest,
+    require => Class['epel'],
   }
   package {'wget':
     ensure => installed,
@@ -236,6 +237,7 @@ node default {
     default: {
     }
   }
+  Class['epel']->Class['collectd']
 }
 
 #node 'dns1' {
