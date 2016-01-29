@@ -75,16 +75,6 @@ node default {
       package { 'wget':
         ensure => latest,
       }
-      class {'elasticsearch':
-        #     manage_repo => true,
-        #repo_version     => '1.5',
-        package_url       => 'https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.6.0.noarch.rpm',
-      }
-      elasticsearch::instance { 'es-01': }
-      class { 'logstash':
-        java_install => true,
-        manage_repo  => true,
-      }
     }
     'mirror': {
       class {'::mongodb::server': }
