@@ -9,6 +9,10 @@ node default {
     ensure  => latest,
     require => Class['epel'],
   }
+  package { 'htop':
+    ensure => latest,
+    require => Class['epel'],
+  }
   package {'wget':
     ensure => installed,
   }

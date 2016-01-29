@@ -3,11 +3,11 @@ build:
   commands:
     - bundle install
     - bundle exec rake syntax
-    - bundle exec rake syntax
+    - bundle exec rake lint
 deploy:
   ssh:
     host: cm.chriscowley.lan
     user: drone
     port: 22
     commands:
-      - /opt/puppetlabs/puppet/bin/r10k deploy environment production -p -v -c /etc/puppetlabs/r10k/r10k.yaml
+      - /opt/puppetlabs/puppet/bin/r10k deploy environment $$BRANCH -p -v -c /etc/puppetlabs/r10k/r10k.yaml
