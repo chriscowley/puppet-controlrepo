@@ -79,12 +79,6 @@ node default {
     'logger': {
       elasticsearch::instance { 'es-01': }
     }
-    'mirror': {
-      class {'::mongodb::server': }
-      class { '::qpid::server':
-        config_file => '/etc/qpid/qpidd.conf',
-      }
-    }
     'data': {
       $mysqldbs = hiera('mysqldb', {})
       create_resources('mysql::db', $mysqldbs)
@@ -182,52 +176,10 @@ node default {
         require     =>  Staging::Deploy['sensu-community-plugins.tar.gz'],
       }
     }
-    'gitlab': {
-
-    }
-    'ci': {
-      package { 'git':
-        ensure => 'latest',
-      }
-      user { 'jenkins':
-        ensure => 'present'
-      }
-      single_user_rvm::install { 'jenkins':
-        home => '/var/lib/jenkins/',
-      }
-      single_user_rvm::install_ruby { 'ruby-2.1.3':
-        user => 'jenkins',
-        home => '/var/lib/jenkins/',
-      }
-      jenkins::plugin { 'rebuild': }
-      jenkins::plugin { 'git-client': }
-      jenkins::plugin { 'scm-api': }
-      jenkins::plugin { 'token-macro': }
-      jenkins::plugin { 'parameterized-trigger': }
-      jenkins::plugin { 'git': }
-      jenkins::plugin { 'gitlab-plugin': }
-      jenkins::plugin { 'ruby-runtime': }
-      jenkins::plugin { 'rvm': }
-      jenkins::plugin { 'shiningpanda': }
-      jenkins::plugin { 'publish-over-ssh': }
-
-      file { '/var/lib/jenkins/.virtualenvs':
-        ensure  => directory,
-        owner   => 'jenkins',
-        group   => 'jenkins',
-        require => User['jenkins'],
-      }
-      python::virtualenv {'/var/lib/jenkins/jobs/justanotherlinuxblog/':
-        ensure     => present,
-        venv_dir   => '/var/lib/jenkins/.virtualenvs/pelcan',
-        systempkgs => false,
-        distribute => false,
-        owner      => 'jenkins',
-        group      => 'jenkins',
-        cwd        => '/var/lib/jenkins/jobs/justanotherlinuxblog/',
-      }
-    }
     'package': {
+      user { 'gemmirror':
+        ensure => present,
+      }
       class {'::mongodb::server': }
     }
     'toolbox': {
@@ -244,9 +196,3 @@ node default {
   }
   Class['epel']->Class['collectd']
 }
-
-#node 'dns1' {
-  #class { 'etchosts': }
-  ##class { 'dnsmasq': }
-  #Class['etchosts'] ~> Class['dnsmasq']
-  #}
