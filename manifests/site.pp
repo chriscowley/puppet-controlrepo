@@ -10,7 +10,7 @@ node default {
     require => Class['epel'],
   }
   package { 'htop':
-    ensure => latest,
+    ensure  => latest,
     require => Class['epel'],
   }
   package {'wget':
