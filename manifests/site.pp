@@ -177,10 +177,10 @@ node default {
       }
     }
     'package': {
-      user { 'gemmirror':
-        ensure => present,
-      }
-      class {'::mongodb::server': }
+      # user { 'gemmirror':
+      #  ensure => present,
+      #}
+      #class {'::mongodb::server': }
     }
     'toolbox': {
       mysql::db {'gogs':
