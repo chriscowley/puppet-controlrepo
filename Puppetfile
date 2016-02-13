@@ -69,3 +69,5 @@ mod 'single_user_rvm',
   :git => 'https://gogs.chriscowley.me.uk/puppet/puppet-single_user_rvm.git'
 mod 'hiera_resources',
   :git => 'https://github.com/rnelson0/puppet-hiera_resources.git'
+mod 'backup',
+  :git => 'https://gogs.chriscowley.me.uk/puppet/chriscowley-backup.git'

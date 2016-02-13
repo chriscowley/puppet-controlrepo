@@ -186,6 +186,7 @@ node default {
       sshkeys::create_ssh_key { 'root':
         ssh_keytype => 'rsa',
       }
+      class { 'backup': }
       mysql::db {'gogs':
         user     => 'gogs',
         password => 'correcthorsebatterystaple',
