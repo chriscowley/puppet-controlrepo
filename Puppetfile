@@ -38,6 +38,7 @@ mod 'camptocamp/archive', '0.8.1'
 mod 'saz/timezone'
 mod 'garethr/docker', '5.0.0'
 mod 'jtopjian/sshkeys', '2.1.0'
+mod 'dalen/puppetdbquery', '2.1.1'
 mod 'diamond',
 	:git => 'https://github.com/chriscowley/garethr-diamond.git'
 mod 'jenkins',
