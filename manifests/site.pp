@@ -183,6 +183,9 @@ node default {
       #class {'::mongodb::server': }
     }
     'toolbox': {
+      sshkeys::create_ssh_key { 'root':
+        ssh_keytype => 'rsa',
+      }
       mysql::db {'gogs':
         user     => 'gogs',
         password => 'correcthorsebatterystaple',
