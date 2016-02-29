@@ -29,8 +29,8 @@ node default {
   #  require => File['/opt/sensu-plugins'],
   #}
   package { 'sensu-plugins-disk-checks':
-    provider => sensu_gem,
     ensure   => '1.1.3',
+    provider => sensu_gem,
   }
   collectd::plugin::write_graphite::carbon { $::fqdn:
     graphitehost    => 'stats.chriscowley.lan',
