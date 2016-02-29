@@ -19,14 +19,18 @@ node default {
   package { 'bind-utils':
     ensure => installed,
   }
-  file { '/opt/sensu-plugins':
-    ensure  => directory,
-    require => Package['wget'],
-  }
-  staging::deploy { 'sensu-community-plugins.tar.gz':
-    source  => 'https://github.com/sensu/sensu-community-plugins/archive/master.tar.gz',
-    target  => '/opt/sensu-plugins',
-    require => File['/opt/sensu-plugins'],
+  #  file { '/opt/sensu-plugins':
+  #  ensure  => directory,
+  #  require => Package['wget'],
+  #}
+  #staging::deploy { 'sensu-community-plugins.tar.gz':
+  #  source  => 'https://github.com/sensu/sensu-community-plugins/archive/master.tar.gz',
+  #  target  => '/opt/sensu-plugins',
+  #  require => File['/opt/sensu-plugins'],
+  #}
+  package { 'sensu-plugins-disk-checks':
+    provider => sensu_gem,
+    ensure   => '1.1.3',
   }
   collectd::plugin::write_graphite::carbon { $::fqdn:
     graphitehost    => 'stats.chriscowley.lan',
@@ -37,12 +41,6 @@ node default {
     storerates      => true,
     alwaysappendds  => true,
     escapecharacter => '_',
-  }
-  sensu::check { 'check_disk':
-    command     => '/opt/sensu-plugins/sensu-community-plugins-master/plugins/system/check-disk.rb',
-    handlers    => 'default',
-    subscribers => 'base',
-    require     =>  Staging::Deploy['sensu-community-plugins.tar.gz'],
   }
   class {'etchosts::client': }
   case $::osfamily {
