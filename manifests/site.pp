@@ -32,6 +32,10 @@ node default {
     ensure   => '1.1.3',
     provider => sensu_gem,
   }
+  package { 'sensu-plugins-process-checks':
+    ensure   => 'installed',
+    provider => sensu_gem,
+  }
   collectd::plugin::write_graphite::carbon { $::fqdn:
     graphitehost    => 'stats.chriscowley.lan',
     graphiteport    => '2003',
@@ -165,13 +169,11 @@ node default {
         command     => '/opt/sensu-plugins/sensu-community-plugins-master/plugins/processes/check-procs.rb -p crond -C   1',
         handlers    => 'default',
         subscribers => 'base',
-        require     =>  Staging::Deploy['sensu-community-plugins.tar.gz'],
       }
       sensu::check { 'check_puppet':
         command     => '/opt/sensu-plugins/sensu-community-plugins-master/plugins/processes/check-procs.rb -p puppet -C   1',
         handlers    => 'default',
         subscribers => 'base',
-        require     =>  Staging::Deploy['sensu-community-plugins.tar.gz'],
       }
     }
     'package': {
