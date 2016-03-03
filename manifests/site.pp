@@ -136,9 +136,6 @@ node default {
         },
       }
     }
-    'web-frontend': {
-      class {'apache':}
-    }
     'puppet': {
         class { 'puppetdb':   }
         class { 'puppetdb::master::config':

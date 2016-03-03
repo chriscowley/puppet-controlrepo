@@ -38,6 +38,7 @@ mod 'saz/timezone'
 mod 'garethr/docker', '5.0.0'
 mod 'jtopjian/sshkeys', '2.1.0'
 mod 'dalen/puppetdbquery', '2.1.1'
+mod 'jfryman/nginx', '0.3.0'
 mod 'diamond',
 	:git => 'https://github.com/chriscowley/garethr-diamond.git'
 mod 'jenkins',
