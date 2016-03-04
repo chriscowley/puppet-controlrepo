@@ -193,6 +193,16 @@ node default {
       hiera_resources('toolbox-dbs')
     }
     'web': {
+      class { '::consul':
+        config_hash          => {
+          'bootstrap_expect' => 1,
+          'data_dir'         => '/opt/consul',
+          'datacenter'       => 'homelab',
+          'log_level'        => 'INFO',
+          'node_name'        => 'dns1',
+          'server'           => true,
+        }
+      }
     }
     default: {
     }
