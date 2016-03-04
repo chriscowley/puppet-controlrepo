@@ -193,17 +193,6 @@ node default {
       hiera_resources('toolbox-dbs')
     }
     'web': {
-      apache::balancer { 'dash.chriscowley.me.uk':
-      }
-      apache::balancermember { 'dash.chriscowley.me.uk-stats':
-        balancer_cluster => 'dash.chriscowley.me.uk',
-        url              => 'stats.chriscowley.lan:3000',
-        options          => [
-          'ping=5',
-          'disablereuse=on',
-          'retry=5','ttl=120'
-        ],
-      }
     }
     default: {
     }
