@@ -88,6 +88,10 @@ node default {
       create_resources('mysql::user', $mysqlusers)
       $mysqlgrants = hiera('mysqlgrant', {})
       create_resources('mysql::grant', $mysqlgrants)
+      package { 'sensu-plugins-mysql':
+        ensure   => 'installed',
+        provider => sensu_gem,
+      }
     }
     'metrics': {
       apache::vhost { 'graphite.chriscowley.lan':
