@@ -88,23 +88,33 @@ node default {
       create_resources('mysql::user', $mysqlusers)
       $mysqlgrants = hiera('mysqlgrant', {})
       create_resources('mysql::grant', $mysqlgrants)
+      package { ['gcc', 'mariadb-devel', 'openssl-devel']:
+        ensure => latest,
+      } ->
       package { 'sensu-plugins-mysql':
         ensure   => 'installed',
         provider => sensu_gem,
+      }
+
+      file { '/etc/sensu/my.conf':
+        ensure => present,
+        owner  => 'sensu',
+        group  => 'sensu',
+        mode   => 440,
       }
       ini_setting {'sensutestuser':
         ensure  => present,
         path    => '/etc/sensu/my.cnf',
         section => 'client',
         setting => 'user',
-        value   => 'sensu',
+        value   => 'sensutest',
       }
       ini_setting {'sensutestpassword':
         ensure  => present,
         path    => '/etc/sensu/my.cnf',
         section => 'client',
         setting => 'password',
-        value   => hiera('mysqldb::sensutest::password')
+        value   => $::mysqldb::sensutest::password,
       }
     }
     'metrics': {
