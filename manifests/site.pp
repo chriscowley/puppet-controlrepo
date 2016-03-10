@@ -92,6 +92,20 @@ node default {
         ensure   => 'installed',
         provider => sensu_gem,
       }
+      ini_setting {'sensutestuser':
+        ensure  => present,
+        path    => '/etc/sensu/my.cnf',
+        section => 'client',
+        setting => 'user',
+        value   => 'sensu',
+      }
+      ini_setting {'sensutestpassword':
+        ensure  => present,
+        path    => '/etc/sensu/my.cnf',
+        section => 'client',
+        setting => 'password',
+        value   => hiera('mysqldb::sensutest::password')
+      }
     }
     'metrics': {
       apache::vhost { 'graphite.chriscowley.lan':
