@@ -13,7 +13,7 @@ node default {
     ensure  => latest,
     require => Class['epel'],
   }
-  package {'wget', 'unzip':
+  package { ['wget', 'unzip']:
     ensure => installed,
   }
   package { 'bind-utils':
