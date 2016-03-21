@@ -13,7 +13,7 @@ node default {
     ensure  => latest,
     require => Class['epel'],
   }
-  package {'wget':
+  package {'wget', 'unzip':
     ensure => installed,
   }
   package { 'bind-utils':
@@ -108,14 +108,14 @@ node default {
         section => 'client',
         setting => 'user',
         value   => 'sensutest',
-      }
-      ini_setting {'sensutestpassword':
-        ensure  => present,
-        path    => '/etc/sensu/my.cnf',
-        section => 'client',
-        setting => 'password',
-        value   => $::mysqldb::sensutest::password,
-      }
+zo      }
+      #      ini_setting {'sensutestpassword':
+      #  ensure  => present,
+      #  path    => '/etc/sensu/my.cnf',
+      #  section => 'client',
+      #  setting => 'password',
+      #  value   => $::mysqldb::sensutest::password,
+      #}
     }
     'metrics': {
       apache::vhost { 'graphite.chriscowley.lan':
@@ -221,6 +221,8 @@ node default {
       hiera_resources('toolbox-dbs')
     }
     'web': {
+      $webvhosts = hiera('webvhosts', {})
+      create_resources('apache::vhost', $webvhosts)
       class { '::consul':
         config_hash => {
           'bootstrap_expect' => 1,
@@ -231,6 +233,7 @@ node default {
           'server'           => true,
         }
       }
+
     }
     default: {
     }
