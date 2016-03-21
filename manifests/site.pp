@@ -108,7 +108,7 @@ node default {
         section => 'client',
         setting => 'user',
         value   => 'sensutest',
-zo      }
+      }
       #      ini_setting {'sensutestpassword':
       #  ensure  => present,
       #  path    => '/etc/sensu/my.cnf',
