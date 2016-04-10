@@ -190,16 +190,6 @@ node default {
       rabbitmq_vhost { '/sensu':
         ensure => present,
       }
-      sensu::check { 'check_cron':
-        command     => '/opt/sensu-plugins/sensu-community-plugins-master/plugins/processes/check-procs.rb -p crond -C   1',
-        handlers    => 'default',
-        subscribers => 'base',
-      }
-      sensu::check { 'check_puppet':
-        command     => '/opt/sensu-plugins/sensu-community-plugins-master/plugins/processes/check-procs.rb -p puppet -C   1',
-        handlers    => 'default',
-        subscribers => 'base',
-      }
     }
     'package': {
       # user { 'gemmirror':
