@@ -62,7 +62,7 @@ node default {
   case $::role {
     'dns': {
       class { 'dnsmasq': }
-      Class['etchosts'] ~> Class['dnsmasq']
+      #      Class['etchosts'] ~> Class['dnsmasq']
       sysctl { 'net.ipv4.ip_forward': value =>  '1' }
       #      openvpn::server { 'home.chriscowley.me.uk':
       #  country      => 'FR',
