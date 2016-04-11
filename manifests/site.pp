@@ -61,7 +61,6 @@ node default {
   selinux::boolean { 'collectd_tcp_network_connect': }
   case $::role {
     'dns': {
-      class {'etchosts':}
       class { 'dnsmasq': }
       Class['etchosts'] ~> Class['dnsmasq']
       sysctl { 'net.ipv4.ip_forward': value =>  '1' }
