@@ -99,7 +99,7 @@ node default {
         ensure => present,
         owner  => 'sensu',
         group  => 'sensu',
-        mode   => 440,
+        mode   => '0440',
       }
       ini_setting {'sensutestuser':
         ensure  => present,
