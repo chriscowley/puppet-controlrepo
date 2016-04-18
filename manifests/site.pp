@@ -164,8 +164,11 @@ node default {
       }
     }
     'puppet': {
-        class { 'puppetdb':   }
-        class { 'puppetdb::master::config':
+      packagecloud::repo { 'chriscowleyunix/tools':
+        type =>  'rpm',
+      }
+      class { 'puppetdb':   }
+      class { 'puppetdb::master::config':
         puppet_service_name => 'puppetserver',
       }
       class { 'puppetboard':
