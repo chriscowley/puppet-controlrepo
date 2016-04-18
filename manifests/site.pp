@@ -168,6 +168,10 @@ node default {
         class { 'puppetdb::master::config':
         puppet_service_name => 'puppetserver',
       }
+      class { '::mcollective':
+        middleware       => true,
+        middleware_hosts => ['cm.chriscowley.lan'],
+      }
       class { 'puppetboard':
         manage_git        => latest,
         manage_virtualenv => latest,
