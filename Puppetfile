@@ -5,8 +5,6 @@ mod 'puppetlabs/stdlib', '4.10.0'
 mod 'puppetlabs/inifile', '1.4.2'
 mod 'puppetlabs/firewall', '1.7.0'
 mod 'puppetlabs/postgresql', '4.6.0'
-mod 'puppetlabs/activemq', '0.4.0'
-mod 'puppet/mcollective', '2.1.1'
 mod 'puppetlabs/apt', '2.0.1'
 mod 'puppetlabs/concat', '1.2.1'
 mod 'puppetlabs/apache', '1.4.1'
@@ -76,3 +74,5 @@ mod 'hiera_resources',
   :git => 'https://github.com/rnelson0/puppet-hiera_resources.git'
 mod 'backup',
   :git => 'https://gogs.chriscowley.me.uk/puppet/chriscowley-backup.git'
+mod 'mcollective',
+  :git => 'https://github.com/jorhett/puppet-mcollective.git'
