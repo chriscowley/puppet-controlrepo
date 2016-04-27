@@ -216,8 +216,6 @@ node default {
     'web': {
       $webvhosts = hiera('webvhosts', {})
       create_resources('apache::vhost', $webvhosts)
-      }
-
     }
     default: {
     }
