@@ -40,12 +40,6 @@ mod 'jtopjian/sshkeys', '2.1.0'
 mod 'dalen/puppetdbquery', '2.1.1'
 mod 'jfryman/nginx', '0.3.0'
 mod 'KyleAnderson/consul', '1.0.5'
-mod 'huit/ipa', '1.5.5'
-mod 'diamond',
-	:git => 'https://github.com/chriscowley/garethr-diamond.git'
-mod 'jenkins',
-	:git => 'https://github.com/jenkinsci/puppet-jenkins.git',
-	:commit => 'e4815b5996f9aaf4f997c6476f7b67c614e2f415'
 mod 'puppetboard',
 	:git => 'https://github.com/nibalizer/puppet-module-puppetboard.git'
 mod 'pulp',
@@ -53,8 +47,6 @@ mod 'pulp',
 mod 'file_concat',
   :git => 'https://github.com/electrical/puppet-lib-file_concat.git',
   :ref => 'ebc6a32b64bfda92509146d422ab30bd1b0f4610'
-mod 'gitlab',
-  :git => 'https://github.com/spuder/puppet-gitlab.git'
 mod 'logstash',
   :git => 'https://gogs.chriscowley.me.uk/puppet/chriscowley-logstash.git'
 mod 'etchosts',
