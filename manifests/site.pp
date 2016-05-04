@@ -54,11 +54,11 @@ node default {
     default: {
     }
   }
-  class { 'selinux':
-    mode => 'permissive',
-    type => 'targeted',
-  }
-  selinux::boolean { 'collectd_tcp_network_connect': }
+  #  class { 'selinux':
+  #  mode => 'permissive',
+  #  type => 'targeted',
+  #}
+  #selinux::boolean { 'collectd_tcp_network_connect': }
   case $::role {
     'dns': {
       class { 'dnsmasq': }
