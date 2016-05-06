@@ -42,6 +42,7 @@ mod 'jfryman/nginx', '0.3.0'
 mod 'KyleAnderson/consul', '1.0.5'
 mod 'huit/ipa', '1.5.5'
 mod 'camptocamp/openssl', '1.7.1'
+mod 'danzilio/letsencrypt', '1.0.0'
 mod 'puppetlabs/puppet_agent', '1.2.0'
 mod 'diamond',
 	:git => 'https://github.com/chriscowley/garethr-diamond.git'
