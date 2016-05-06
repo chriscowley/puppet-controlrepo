@@ -44,11 +44,6 @@ mod 'huit/ipa', '1.5.5'
 mod 'camptocamp/openssl', '1.7.1'
 mod 'danzilio/letsencrypt', '1.0.0'
 mod 'puppetlabs/puppet_agent', '1.2.0'
-mod 'diamond',
-	:git => 'https://github.com/chriscowley/garethr-diamond.git'
-mod 'jenkins',
-	:git => 'https://github.com/jenkinsci/puppet-jenkins.git',
-	:commit => 'e4815b5996f9aaf4f997c6476f7b67c614e2f415'
 mod 'puppetboard',
 	:git => 'https://github.com/nibalizer/puppet-module-puppetboard.git'
 mod 'pulp',
