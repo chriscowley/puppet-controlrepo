@@ -214,7 +214,7 @@ node default {
       hiera_resources('docker-images')
     }
     'web': {
-      $webvhosts = hiera('webvhosts', {})
+      $webvhosts = hiera('apache::vhosts', {})
       create_resources('apache::vhost', $webvhosts)
     }
     default: {

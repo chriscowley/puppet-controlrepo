@@ -55,8 +55,6 @@ mod 'pulp',
 mod 'file_concat',
   :git => 'https://github.com/electrical/puppet-lib-file_concat.git',
   :ref => 'ebc6a32b64bfda92509146d422ab30bd1b0f4610'
-mod 'gitlab',
-  :git => 'https://github.com/spuder/puppet-gitlab.git'
 mod 'logstash',
   :git => 'https://gogs.chriscowley.me.uk/puppet/chriscowley-logstash.git'
 mod 'etchosts',
