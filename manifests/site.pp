@@ -212,6 +212,10 @@ node default {
     'web': {
       $webvhosts = hiera('apache::vhosts', {})
       create_resources('apache::vhost', $webvhosts)
+      letsencrypt::certonly { 'mirror.chriscowley.me.uk':
+        plugin => 'webroot',
+        webroot_paths => [ '/var/www/mirror.chriscowley.me.uk/' ]
+      }
     }
     default: {
     }
