@@ -44,8 +44,7 @@ mod 'huit/ipa', '1.5.5'
 mod 'camptocamp/openssl', '1.7.1'
 mod 'danzilio/letsencrypt', '1.0.0'
 mod 'puppetlabs/puppet_agent', '1.2.0'
-mod 'puppetboard',
-	:git => 'https://github.com/nibalizer/puppet-module-puppetboard.git'
+mod 'nibalizer/puppetboard', '2.5.0'
 mod 'pulp',
 	:git => 'https://github.com/chriscowley/chriscowley-pulp.git'
 mod 'file_concat',
