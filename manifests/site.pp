@@ -218,7 +218,7 @@ node default {
       #   webroot_paths => [ '/var/www/mirror.chriscowley.me.uk/' ]
       #}
       class { 'lablocal::nonsslvhosts': }->
-      class { 'lablocal::nonsslvhosts': }->
+      class { 'lablocal::letsencryptcerts': }->
       class { 'lablocal::sslvhosts': }
       #      hiera_resources('letsencryptcerts')
       #hiera_resources('apache-ssl-vhosts')
