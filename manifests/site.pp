@@ -54,11 +54,6 @@ node default {
     default: {
     }
   }
-  #  class { 'selinux':
-  #  mode => 'permissive',
-  #  type => 'targeted',
-  #}
-  #selinux::boolean { 'collectd_tcp_network_connect': }
   case $::role {
     'dns': {
       class { 'dnsmasq': }
@@ -216,6 +211,14 @@ node default {
     'web': {
       $webvhosts = hiera('apache::vhosts', {})
       create_resources('apache::vhost', $webvhosts)
+      #      $letsencryptcerts = hiera('letsencrypt::certonly', {})
+      #create_resources('letsencrypt::certonly', $letsencryptcerts)
+      #      letsencrypt::certonly { 'mirror.chriscowley.me.uk':
+      #  plugin => 'webroot',
+      #   webroot_paths => [ '/var/www/mirror.chriscowley.me.uk/' ]
+      #}
+      hiera_resources('letsencryptcerts')
+      hiera_resources('apache-ssl-vhosts')
     }
     default: {
     }
