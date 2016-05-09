@@ -209,16 +209,19 @@ node default {
       hiera_resources('docker-images')
     }
     'web': {
-      $webvhosts = hiera('apache::vhosts', {})
-      create_resources('apache::vhost', $webvhosts)
+      #     $webvhosts = hiera('apache::vhosts', {})
+      #create_resources('apache::vhost', $webvhosts)
       #      $letsencryptcerts = hiera('letsencrypt::certonly', {})
       #create_resources('letsencrypt::certonly', $letsencryptcerts)
       #      letsencrypt::certonly { 'mirror.chriscowley.me.uk':
       #  plugin => 'webroot',
       #   webroot_paths => [ '/var/www/mirror.chriscowley.me.uk/' ]
       #}
-      hiera_resources('letsencryptcerts')
-      hiera_resources('apache-ssl-vhosts')
+      class { 'lablocal::nonsslvhosts': }->
+      class { 'lablocal::nonsslvhosts': }->
+      class { 'lablocal::sslvhosts': }
+      #      hiera_resources('letsencryptcerts')
+      #hiera_resources('apache-ssl-vhosts')
     }
     default: {
     }
