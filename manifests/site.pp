@@ -206,7 +206,7 @@ node default {
         grant    => ['ALL'],
       }
       hiera_resources('toolbox-dbs')
-      hiera_resources('docker-images')
+      #hiera_resources('docker-images')
     }
     'web': {
       #     $webvhosts = hiera('apache::vhosts', {})
