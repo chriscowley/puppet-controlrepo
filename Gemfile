@@ -1,28 +1,27 @@
 source "http://rubygems.org"
 
 group :test do
-  gem "rake"
-  gem "beaker"
-  gem "beaker-rspec"
+  gem "rake", '11.2.2'
+  gem "beaker", '2.44.0'
+  gem "beaker-rspec", '5.4.0'
   gem "puppet", ENV['PUPPET_VERSION'] || '~> 3.7.0'
-  gem "puppet-lint"
+  gem "puppet-lint", '1.1.0'
   gem "rspec-puppet", :git => 'https://github.com/rodjek/rspec-puppet.git'
-  gem "puppet-syntax"
-  gem "puppetlabs_spec_helper"
-  gem "metadata-json-lint"
-  gem "r10k"
-  gem "hiera-eyaml"
+  gem "puppet-syntax", '2.1.0'
+  gem "puppetlabs_spec_helper", '1.1.1'
+  gem "metadata-json-lint", '0.0.11'
+  gem "r10k", '2.3.0'
+  gem "hiera-eyaml", '2.1.0'
 end
 
 group :development do
   gem "travis"
   gem "travis-lint"
-  gem "beaker"
-  gem "beaker-rspec"
+  gem "beaker", '2.44.0'
+  gem "beaker-rspec",  '5.4.0'
   gem "vagrant-wrapper"
   gem "puppet-blacksmith"
   gem "guard-rake"
   gem "pry"
   gem "yard"
-  gem "hiera-eyaml"
 end
