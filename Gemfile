@@ -1,11 +1,11 @@
 source "http://rubygems.org"
-
+gem "rake", '11.2.2'
+gem 'hiera', '3.2.0'
 group :test do
-  gem "rake", '11.2.2'
   gem "beaker", '2.44.0'
   gem "beaker-rspec", '5.4.0'
-  gem "puppet", ENV['PUPPET_VERSION'] || '~> 3.7.0'
   gem "puppet-lint", '1.1.0'
+  gem "puppet", ENV['PUPPET_VERSION'] || '~> 4.4.2'
   gem "rspec-puppet", :git => 'https://github.com/rodjek/rspec-puppet.git'
   gem "puppet-syntax", '2.1.0'
   gem "puppetlabs_spec_helper", '1.1.1'
