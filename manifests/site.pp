@@ -162,6 +162,13 @@ node default {
       packagecloud::repo { 'chriscowleyunix/tools':
         type =>  'rpm',
       }
+      yumrepo { 'beats':
+        name     => 'Elastic Beats Repository',
+        baseurl  => "https://packages.elastic.co/beats/yum/el/${os_mah_version}",
+        enabled  => 1,
+        gpgkey   => 'https://packages.elastic.co/GPG-KEY-elasticsearch',
+        gpgcheck => 1,
+      }
       class { 'puppetdb':   }
       class { 'puppetdb::master::config':
         puppet_service_name => 'puppetserver',
