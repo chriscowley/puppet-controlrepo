@@ -110,6 +110,23 @@ node default {
       #  setting => 'password',
       #  value   => $::mysqldb::sensutest::password,
       #}
+      class { 'filebeat':
+        outputs => {
+          elasticsearch => {
+            'hosts' => [
+              'http://192.168.1.8:9200',
+            ],
+            'index' => 'filebeat',
+          },
+        },
+      }
+      filebeat::prospector { 'syslogs':
+        paths    => [
+          '/var/log/messages',
+          '/var/log/auth.log',
+        ],
+        doc_type => 'syslog-beat',
+      }
     }
     'metrics': {
       apache::vhost { 'graphite.chriscowley.lan':
