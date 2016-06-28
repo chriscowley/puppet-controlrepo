@@ -21,7 +21,6 @@ mod 'sensu/sensu', '2.0.0'
 mod 'yelp/uchiwa', '1.0.1'
 mod 'stahnma/epel'
 mod 'dwerder/graphite'
-mod 'puppetlabs/nodejs', '0.8.0'
 mod 'computology/packagecloud', '0.2.11'
 mod 'elasticsearch/elasticsearch', '0.10.2'
 mod 'richardc/datacat', '0.6.2'
@@ -75,3 +74,5 @@ mod 'mcollective',
   :git => 'https://github.com/jorhett/puppet-mcollective.git'
 mod 'lablocal',
     :git => 'https://gogs.chriscowley.me.uk/puppet/chriscowley-lablocal.git'
+mod 'statsd',
+    :git => 'https://github.com/chriscowley/chriscowley-statsd.git'
