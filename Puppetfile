@@ -73,6 +73,6 @@ mod 'backup',
 mod 'mcollective',
   :git => 'https://github.com/jorhett/puppet-mcollective.git'
 mod 'lablocal',
-    :git => 'https://gogs.chriscowley.me.uk/puppet/chriscowley-lablocal.git'
+  :git => 'https://gogs.chriscowley.me.uk/puppet/chriscowley-lablocal.git'
 mod 'statsd',
-    :git => 'https://github.com/chriscowley/chriscowley-statsd.git'
+  :git => 'https://github.com/chriscowley/chriscowley-statsd.git'
