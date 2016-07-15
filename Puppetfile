@@ -46,6 +46,12 @@ mod 'danzilio/letsencrypt', '1.0.0'
 mod 'puppetlabs/puppet_agent', '1.2.0'
 mod 'nibalizer/puppetboard', '2.5.0'
 mod 'pcfens/filebeat', '0.7.1'
+mod 'zack/r10k'
+mod 'puppetlabs/gcc'
+mod 'puppetlabs/pe_gem'
+mod 'croddy/make'
+mod 'puppetlabs/git'
+mod 'gentoo/portage'
 mod 'pulp',
 	:git => 'https://github.com/chriscowley/chriscowley-pulp.git'
 mod 'file_concat',
