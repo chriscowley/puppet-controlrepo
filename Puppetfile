@@ -1,6 +1,6 @@
 forge 'forge.puppetlabs.com'
 
-mod 'puppetlabs/puppetdb', '5.0.0'
+mod 'puppetlabs/puppetdb', '5.1.2'
 mod 'puppetlabs/stdlib', '4.10.0'
 mod 'puppetlabs/inifile', '1.4.2'
 mod 'puppetlabs/firewall', '1.7.0'
