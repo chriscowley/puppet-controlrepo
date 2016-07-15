@@ -52,6 +52,7 @@ mod 'puppetlabs/pe_gem'
 mod 'croddy/make'
 mod 'puppetlabs/git'
 mod 'gentoo/portage'
+mod 'puppet/hiera'
 mod 'pulp',
 	:git => 'https://github.com/chriscowley/chriscowley-pulp.git'
 mod 'file_concat',
