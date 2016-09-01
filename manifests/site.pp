@@ -192,8 +192,8 @@ node default {
       }
 
       class { 'puppetboard':
-        manage_git        => latest,
-        manage_virtualenv => latest,
+        manage_git        => true,
+        manage_virtualenv => true,
       }
       class { 'apache': }
       class { 'apache::mod::wsgi':
