@@ -81,7 +81,7 @@ node default {
         managehome => true,
         system     => true,
       } ->
-      ssh::set_authorized_key { 'root@data to borg@backup':
+      sshkeys::set_authorized_key { 'root@data to borg@backup':
         local_user  => 'borg',
         remote_user => 'root@data.novalocal',
       }
