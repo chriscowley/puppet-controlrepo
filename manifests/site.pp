@@ -75,7 +75,12 @@ node default {
     'logger': {
       elasticsearch::instance { 'es-01': }
     }
+    'backup': {
+    }
     'data': {
+      sshkeys::create_ssh_key { 'root':
+        ssh_keytype => 'rsa',
+      }
       $mysqldbs = hiera('mysqldb', {})
       create_resources('mysql::db', $mysqldbs)
       $mysqlusers = hiera('mysqluser', {})
