@@ -76,6 +76,15 @@ node default {
       elasticsearch::instance { 'es-01': }
     }
     'backup': {
+      user {'borg':
+        home       => '/srv/borg',
+        managehome => true,
+        system     => true,
+      } ->
+      ssh::set_authorized_key { 'root@data to borg@backup':
+        local_user  => 'borg'
+        remote_user => 'root@data.novalocal',
+      }
     }
     'data': {
       sshkeys::create_ssh_key { 'root':
