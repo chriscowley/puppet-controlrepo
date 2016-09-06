@@ -82,7 +82,7 @@ node default {
         system     => true,
       } ->
       ssh::set_authorized_key { 'root@data to borg@backup':
-        local_user  => 'borg'
+        local_user  => 'borg',
         remote_user => 'root@data.novalocal',
       }
     }
