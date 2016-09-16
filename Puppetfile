@@ -83,5 +83,5 @@ mod 'lablocal',
   :git => 'https://gogs.chriscowley.me.uk/puppet/chriscowley-lablocal.git'
 mod 'statsd',
   :git => 'https://github.com/chriscowley/chriscowley-statsd.git'
-mod 'borg',
-  :git => 'https://github.com/chriscowley/chriscowley-borg.git'
+#mod 'borg',
+#  :git => 'https://github.com/chriscowley/chriscowley-borg.git'
