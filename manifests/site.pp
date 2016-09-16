@@ -81,6 +81,12 @@ node default {
         managehome => true,
         system     => true,
       } ->
+      file { '/srv/borg/.ssh':
+        ensure => 'directory',
+        owner  => 'borg',
+        group  => 'borg',
+        mode   => '0700'
+      } ->
       sshkeys::set_authorized_key { 'root@data to borg@backup':
         local_user  => 'borg',
         remote_user => 'root@data.novalocal',
