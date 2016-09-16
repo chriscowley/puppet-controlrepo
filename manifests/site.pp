@@ -9,7 +9,7 @@ node default {
     ensure  => latest,
     require => Class['epel'],
   }
-  package { 'htop':
+  package { ['htop', 'bash-completion']:
     ensure  => latest,
     require => Class['epel'],
   }
