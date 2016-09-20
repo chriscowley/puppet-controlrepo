@@ -1,7 +1,7 @@
 build:
-  image: ruby:2.1.3
+  image: ruby:2
   commands:
-    - bundle install
+    - bundle install --without development
     - bundle exec rake syntax
     - bundle exec rake lint
 deploy:
@@ -11,3 +11,11 @@ deploy:
     port: 22
     commands:
       - /opt/puppetlabs/puppet/bin/r10k deploy environment $$BRANCH -p -v -c /etc/puppetlabs/r10k/r10k.yaml
+notify:
+  webhook:
+    urls:
+      - http://192.168.1.3:5000
+    content_type: application/yaml
+    template: >
+        repo: {{ repo.full_name }}
+        branch: {{ build.branch }}
