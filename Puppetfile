@@ -61,8 +61,6 @@ mod 'thias/glusterfs', '0.0.3'
 mod 'file_concat',
   :git => 'https://github.com/electrical/puppet-lib-file_concat.git',
   :ref => 'ebc6a32b64bfda92509146d422ab30bd1b0f4610'
-mod 'logstash',
-  :git => 'https://gogs.chriscowley.me.uk/puppet/chriscowley-logstash.git'
 mod 'etchosts',
   :git => 'https://github.com/chriscowley/chriscowley-etchosts.git',
   :ref => 'fa1679971b4b5c0c3f5f466328c15ee5e23156ef'
@@ -70,20 +68,20 @@ mod 'dnsmasq',
   :git => 'https://github.com/chriscowley/chriscowley-dnsmasq.git',
   :ref => 'c39e01afa0ca03b6aa16054f10cdc62224686770'
 mod 'custom_facts',
-  :git => 'https://gogs.chriscowley.me.uk/puppet/custom_facts.git',
+  :git => 'https://github.com/chriscowley/puppet-custom_facts.git'
   :ref => '7478d2170870db45677f936bf18ac155325b334d'
 mod 'redis',
   :git => 'https://github.com/chriscowley/chriscowley-redis.git'
 mod 'single_user_rvm',
-  :git => 'https://gogs.chriscowley.me.uk/puppet/puppet-single_user_rvm.git'
+  :git => 'https://github.com/chriscowley/puppet-single_user_rvm.git'
 mod 'hiera_resources',
   :git => 'https://github.com/rnelson0/puppet-hiera_resources.git'
-mod 'backup',
-  :git => 'https://gogs.chriscowley.me.uk/puppet/chriscowley-backup.git'
+#mod 'backup',
+#  :git => 'https://gogs.chriscowley.me.uk/puppet/chriscowley-backup.git'
 mod 'mcollective',
   :git => 'https://github.com/jorhett/puppet-mcollective.git'
 mod 'lablocal',
-  :git => 'https://gogs.chriscowley.me.uk/puppet/chriscowley-lablocal.git'
+  :git => 'https://github.com/chriscowley/puppet-lablocal.git'
 mod 'statsd',
   :git => 'https://github.com/chriscowley/chriscowley-statsd.git'
 #mod 'borg',
